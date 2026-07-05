@@ -3,49 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Free by Roy B. | Modern Lifestyle & Tech Coaching</title>
+    <title>Live Free by Roy B. | Modern lifestyle en tech coaching</title>
     <style>
         :root {
-            --primary: #0f172a;    /* Exclusief diep donkerblauw */
-            --gold: #d4af37;       /* Champagne goud voor de high-end look */
-            --accent: #10b981;     /* Mintgroen voor de actieve coach-vibe */
-            --text: #334155;
-            --bg-light: #f8fafc;
+            --primary: #0f172a;    /* Diep donkerblauw voor maximaal contrast */
+            --gold: #d4af37;       /* Warm goud voor de premium afwerking */
+            --accent: #10b981;     /* Rustig groen voor duidelijke status */
+            --text: #1e293b;       /* Donkere, zeer leesbare tekst */
+            --bg-light: #f8fafc;   /* Rustige, witte achtergrond */
         }
 
         body {
-            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
             color: var(--text);
             background-color: #ffffff;
             line-height: 1.6;
-            font-size: 18px;
+            font-size: 19px; /* Groter lettertype voor optimaal leescomfort */
         }
 
         .container {
-            width: 85%;
+            width: 90%;
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 0;
         }
 
-        /* Premium Header & Logo Visualisatie */
+        /* Navigatiebalk */
         header {
             background: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 10px 0;
+            padding: 15px 0;
         }
         .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
-        /* Het Logo Concept in Code */
         .logo-container {
             display: flex;
             align-items: center;
@@ -56,147 +57,258 @@
             flex-direction: column;
         }
         .logo-main {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: var(--primary);
             text-transform: uppercase;
             line-height: 1;
         }
         .logo-sub {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 400;
             color: var(--gold);
             letter-spacing: 1px;
             margin-top: 5px;
         }
 
-        .phone-link {
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .phone-link:hover {
-            background: var(--gold);
+        .contact-knoppen-top {
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            padding: 100px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 46px;
-            color: var(--primary);
-            margin-bottom: 25px;
-            font-weight: 800;
-        }
-        .hero p {
-            font-size: 24px;
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            color: #475569;
-        }
-        .cta-btn {
-            background: var(--primary);
-            color: white;
-            font-size: 20px;
-            padding: 18px 40px;
+        .btn-top {
             text-decoration: none;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 6px;
             font-weight: bold;
-            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
-            display: inline-block;
-            transition: transform 0.2s;
-            border: 2px solid var(--primary);
+            font-size: 16px;
         }
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            background: transparent;
+        .btn-wa-top {
+            background-color: #25d366;
+            color: white;
+        }
+        .btn-call-top {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Introductie met Single Line Art */
+        .hero-sectie {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 80px 0;
+        }
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-links {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hero-links h1 {
+            font-size: 42px;
             color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero-links p {
+            font-size: 22px;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+        .hero-rechts {
+            flex: 0 0 250px;
+            display: flex;
+            justify-content: center;
+        }
+        .line-art-container {
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 2px solid var(--gold);
         }
 
         /* Diensten */
-        .services {
+        .diensten-sectie {
             padding: 80px 0;
         }
-        .services h2 {
+        .diensten-sectie h2 {
             text-align: center;
             font-size: 36px;
             color: var(--primary);
-            margin-bottom: 50px;
+            margin-bottom: 10px;
         }
-        .grid {
+        .sectie-ondertitel {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+        .diensten-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
-        .card {
+        .dienst-kaart {
             background: white;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .card h3 {
+        .dienst-kaart h3 {
             color: var(--primary);
             font-size: 24px;
             margin-top: 0;
             border-bottom: 2px solid var(--gold);
             padding-bottom: 10px;
         }
-        .price {
-            font-size: 28px;
+        .prijs-balk {
+            font-size: 19px;
             font-weight: bold;
             color: var(--primary);
-            margin-top: 25px;
+            margin-top: auto;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
         }
 
-        /* Werkwijze */
-        .werkwijze {
+        /* Tarieven en regels */
+        .tarieven-sectie {
             background-color: var(--bg-light);
             padding: 80px 0;
+            border-top: 2px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
         }
-        .werkwijze h2 {
+        .tarieven-sectie h2 {
             text-align: center;
-            color: var(--primary);
             font-size: 36px;
-        }
-        .steps {
-            max-width: 800px;
-            margin: 50px auto;
-        }
-        .step {
+            color: var(--primary);
             margin-bottom: 40px;
-            padding-left: 50px;
-            position: relative;
         }
-        .step::before {
-            content: "➔";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--gold);
-            font-size: 28px;
+        .tarieven-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+        .tarieven-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .tarieven-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 24px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        .tarieven-lijst {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tarieven-lijst li {
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tarieven-lijst li:last-child {
+            border-bottom: none;
+        }
+        .notitie-box {
+            grid-column: 1 / -1;
+            background: #eff6ff;
+            border-left: 5px solid var(--gold);
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 18px;
+        }
+
+        /* Contact en Uren Sectie */
+        .uren-sectie {
+            padding: 80px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+        .uren-box {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .uren-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+            text-align: center;
+        }
+        .uren-lijst {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .uren-lijst li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .uren-lijst li:last-child {
+            border-bottom: none;
+        }
+        .cta-groot {
+            background: #25d366;
+            color: white;
+            font-size: 22px;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 6px;
             font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            margin: 10px;
+        }
+        .cta-bellen {
+            background: var(--primary);
+            color: white;
+            font-size: 22px;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+            margin: 10px;
         }
 
         footer {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 50px 0;
+            padding: 40px 0;
             font-size: 16px;
+            border-top: 4px solid var(--gold);
+        }
+        footer p {
+            margin: 8px 0;
         }
     </style>
 </head>
@@ -204,7 +316,6 @@
 
     <header>
         <div class="container header-flex">
-            <!-- Het Logo Concept Gevitaliseerd in SVG -->
             <div class="logo-container">
                 <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="100" height="100" rx="20" fill="#0F172A"/>
@@ -216,68 +327,140 @@
                     <span class="logo-sub">by Roy B.</span>
                 </div>
             </div>
-            <a href="tel:+3200000000" class="phone-link">Contacteer Roy B.</a>
+            <div class="contact-knoppen-top">
+                <a href="https://wa.me/32487529489" class="btn-top btn-wa-top">WhatsApp</a>
+                <a href="tel:+32487529489" class="btn-top btn-call-top">Bel Roy</a>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Leef vrij. Blijf modern. Geniet volop.</h1>
-            <p>Exclusieve Lifestyle & Tech coaching aan huis voor actieve 60-plussers in de regio Antwerpen. Wij regelen de moderne drempels, zodat u zich kunt focussen op de leuke dingen.</p>
-            <a href="https://wa.me/320000000" class="cta-btn">Vraag uw gratis kennismaking aan</a>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container">
-            <h2>Premium Begeleiding op Maat</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Modern Life & Tech</h3>
-                    <p>Volledige onafhankelijkheid op uw smartphone en tablet. We installeren en trainen u in Itsme, veilig online bankieren en beschermen u proactief tegen phishing en WhatsApp-fraude.</p>
-                </div>
-                <div class="card">
-                    <h3>De Exclusieve Reiziger</h3>
-                    <p>Zorgeloos de wereld ontdekken. Wij leren u hippe verblijven boeken via Booking of Airbnb, digitaal inchecken voor uw vlucht, en vlot navigeren met Google Maps of Uber op verplaatsing.</p>
-                </div>
-                <div class="card">
-                    <h3>AI & Entertainment</h3>
-                    <p>Ontdek de kracht van ChatGPT. Leer praten met AI om brieven te schrijven of ideeën op te doen. Plus: uw favoriete muziek altijd bij de hand via Spotify en uw Smart TV optimaal ingesteld.</p>
-                </div>
+    <section class="hero-sectie">
+        <div class="container hero-flex">
+            <div class="hero-links">
+                <h1>Leef vrij. Blijf modern. Geniet volop.</h1>
+                <p>Exclusieve hulp aan huis en coaching voor actieve 60-plussers in Antwerpen en omstreken. Wij lossen de moderne, digitale drempels voor u op, zodat u zich kunt focussen op de leuke dingen van het leven.</p>
+                <span style="background: var(--primary); color: white; padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 16px;">Altijd strikt op afspraak</span>
             </div>
-            <div style="text-align: center; margin-top: 50px; font-size: 22px; font-weight: bold; color: var(--primary);">
-                Trajecten vanaf € 249 inclusief 21% btw
+            <div class="hero-rechts">
+                <div class="line-art-container">
+                    <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M35 25C38 15 50 12 60 18C70 24 75 35 72 45C69 55 60 62 55 72C52 78 54 85 50 90C48 92 44 88 45 84C47 76 51 70 48 62C46 56 38 52 32 48C26 44 24 35 28 28" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M45 40C48 38 52 38 55 40" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="werkwijze">
+    <section class="diensten-sectie">
         <div class="container">
-            <h2>Onze Exclusieve Aanpak</h2>
-            <div class="steps">
-                <div class="step">
-                    <strong>1. De Vrijblijvende Intake (20 Minuten)</strong><br>
-                    Tijdens een korte babbel of koffie brengen we uw specifieke wensen en doelen in kaart. Geen standaardtapes, maar puur maatwerk op uw tempo.
+            <h2>Resultaatgerichte trajecten op maat</h2>
+            <p class="sectie-ondertitel">Beschikbaar voor u alleen of gezamenlijk als koppel</p>
+            
+            <div class="diensten-grid">
+                <div class="dienst-kaart">
+                    <h3>Modern life en tech executive</h3>
+                    <p>Volledige onafhankelijkheid op uw apparaten. We installeren en trainen u in het gebruik van itsme, online bankieren en de digitale e-Box van de overheid. Daarnaast beveiligen we uw toestellen proactief tegen fraude en structureren we uw persoonlijke wachtwoordkluis.</p>
+                    <div class="prijs-balk">Individueel: € 285 | Koppel: € 385 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
                 </div>
-                <div class="step">
-                    <strong>2. Coaching & Ontzorging aan Huis</strong><br>
-                    Ik kom naar u toe en we gaan direct praktisch aan de slag op uw eigen apparaten. Rustig, motiverend en met een flinke dosis energie.
+                <div class="dienst-kaart">
+                    <h3>The trendy explorer</h3>
+                    <p>Zorgeloos genieten van cultuur, horeca en reizen. We maken u wegwijs in applicaties zoals Booking, Airbnb, Uber en Spotify. Als uw persoonlijke assistent boeken we tijdens de sessie live een exclusief restaurant of theateruitstap naar uw keuze, zodat u het proces direct beheerst.</p>
+                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
                 </div>
-                <div class="step">
-                    <strong>3. De Persoonlijke Spiekbrief</strong><br>
-                    Na elke sessie ontvangt u een op maat gemaakt overzicht in grote, duidelijke letters zodat u alles achteraf zonder stress kunt nalezen.
+                <div class="dienst-kaart">
+                    <h3>Smart future en gadgets</h3>
+                    <p>Ontdek hoe u eenvoudig kunt praten met AI (ChatGPT) om brieven te schrijven of ideeën op te doen voor uw hobby's. Daarnaast koppelen en optimaliseren we uw actieve levensstijl via smartwatches, stappentellers en de synchronisatie met het systeem in uw wagen.</p>
+                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://wa.me/320000000" class="cta-btn">Start Vandaag Nog</a>
+        </div>
+    </section>
+
+    <section class="tarieven-sectie">
+        <div class="container">
+            <h2>Transparante tarieven en verplaatsingen</h2>
+            
+            <div class="tarieven-grid">
+                <div class="tarieven-box">
+                    <h3>Uurtarief en forfaits</h3>
+                    <ul class="tarieven-lijst">
+                        <li>
+                            <span><strong>Losse uren (Single Hours)</strong><br><small>Voor acute digitale hulp of de belastingbrief</small></span>
+                            <strong>€ 55,00 <small>ex. btw</small></strong>
+                        </li>
+                        <li>
+                            <span><strong>Persoonlijke spiekbrief (na losse uren)</strong><br><small>Geprinte handleiding in grote letters op maat</small></span>
+                            <strong>€ 15,00 <small>ex. btw</small></strong>
+                        </li>
+                        <li>
+                            <span><strong>Spiekbrief binnen trajecten</strong><br><small>Standaard inbegrepen bij elk vast pakket</small></span>
+                            <span style="color: var(--accent); font-weight: bold;">Inbegrepen</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tarieven-box">
+                    <h3>Verplaatsingskosten per bezoek</h3>
+                    <ul class="tarieven-lijst">
+                        <li>
+                            <span><strong>Binnen de Leien</strong><br><small>Centrum Antwerpen (regio Zuid, ...)</small></span>
+                            <span style="color: var(--accent); font-weight: bold;">Gratis</span>
+                        </li>
+                        <li>
+                            <span><strong>Binnen de Singel</strong><br><small>Berchem, Borgerhout, de Ring-zone, ...</small></span>
+                            <strong>€ 10,00 <small>ex. btw</small></strong>
+                        </li>
+                        <li>
+                            <span><strong>Buiten de Singel tot de rand</strong><br><small>Van Essen tot Mechelen, Lier, Zoersel en Halle</small></span>
+                            <strong>€ 20,00 <small>ex. btw</small></strong>
+                        </li>
+                        <li>
+                            <span><strong>Waasland (via de tunnel)</strong><br><small>Regio Linkeroever tot Sint-Niklaas</small></span>
+                            <strong>€ 30,00 <small>ex. btw</small></strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="notitie-box">
+                    <strong>Belangrijke afspraak omtrent aankopen en parkeerkosten:</strong><br>
+                    Live Free fungeert nooit als bank of financier voor uw software of apparatuur. Indien we samen overgaan tot de aankoop van hardware (smartphone, tablet) of licenties (antivirus, extra iCloud-opslag), worden deze altijd rechtstreeks via uw eigen bankkaart of Payconiq afgerekend op het moment zelf. Eventuele parkeerkosten op locatie worden transparant 1-op-1 overgenomen uit de parkeer-app en doorgerekend op de factuur.
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section class="uren-sectie">
+        <div class="container">
+            <h2>Contact opnemen met Roy</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Heeft u een vraag of wilt u een afspraak inplannen? Bekijk hieronder wanneer ik telefonisch bereikbaar ben.</p>
+            
+            <div class="uren-box">
+                <h3>Telefonische contacturen</h3>
+                <ul class="uren-lijst">
+                    <li><span>Maandag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
+                    <li><span>Dinsdag</span><span>12:00 - 14:00</span></li>
+                    <li><span>Woensdag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
+                    <li><span>Donderdag</span><span>12:00 - 14:00</span></li>
+                    <li><span>Vrijdag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
+                    <li><span>Zaterdag &amp; zondag</span><span>Gesloten (enkel op afspraak)</span></li>
+                </ul>
+                <p style="font-size: 15px; color: #64748b; margin-top: 20px; text-align: center; line-height: 1.4;">
+                    <em>Opmerking: Klanten met een lopend service-abonnement genieten van prioritaire toegang en kunnen te allen tijde hun vragen insturen via WhatsApp.</em>
+                </p>
+            </div>
+
+            <a href="https://wa.me/32487529489" class="cta-groot">Stuur een WhatsApp</a>
+            <a href="tel:+32487529489" class="cta-bellen">Bel Roy direct</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Live Free by Roy B. | Onderdeel van Roy B. Coaching</p>
-            <p>Actief in regio Antwerpen | BE0XXX.XXX.XXX</p>
+            <p><strong>Live Free by Roy B.</strong> is een onderdeel van Roy B. Coaching</p>
+            <p>E-mail: roybcoaching@gmail.com | Telefoon: +32 487 52 94 89</p>
+            <p>Btw-nummer: BE 102 145 73 12 | Rekeningnummer: DE 81 1001 1001 2947 6911 98</p>
+            <p style="font-size: 14px; color: #94a3b8; margin-top: 20px;">&copy; 2026 Live Free. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
