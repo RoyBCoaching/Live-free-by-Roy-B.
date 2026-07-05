@@ -357,6 +357,64 @@
             white-space: nowrap;
         }
 
+        /* Goudgerande Abonnement Box */
+        .abonnement-container {
+            margin-top: 50px;
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(197,168,128,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .abonnement-links {
+            flex: 1;
+            min-width: 300px;
+        }
+        .abonnement-links h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .abonnement-links p {
+            font-size: 16px;
+            color: #4a5568;
+            margin: 0;
+        }
+        .abonnement-badge {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        .abonnement-rechts {
+            text-align: right;
+            min-width: 200px;
+        }
+        .abonnement-prijs {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .abonnement-prijs small {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--light-gray);
+            display: block;
+        }
+
         /* Werkwijze Stappenplan */
         .stappen-sectie {
             padding: 100px 0;
@@ -411,6 +469,14 @@
             color: #4a5568;
             margin: 0;
             line-height: 1.9;
+        }
+        .inline-stap-link {
+            color: var(--primary);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .inline-stap-link:hover {
+            color: var(--gold);
         }
 
         /* Tarieven Sectie */
@@ -673,6 +739,8 @@
             .tabel-prijs { text-align: left; margin-top: 2px; }
             .stap-kaart { padding: 40px 25px; }
             .dienst-kaart { padding: 40px 25px; }
+            .abonnement-container { padding: 30px 20px; text-align: center; }
+            .abonnement-rechts { text-align: center; width: 100%; }
         }
     </style>
 </head>
@@ -735,7 +803,7 @@
             
             <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
             
-            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, yard een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
             
             <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
         </div>
@@ -755,14 +823,14 @@
                         <h3>Modern life en tech executive</h3>
                         
                         <div class="traject-details-box">
-                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fas fa-home"></i> 1 sessie van 2 uur per week aan huis</div>
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
                         <p>Breng volledige rust in uw digitale leven. Ik train u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
                     </div>
                     <div class="prijs-balk">
-                        <span class="prijs-wrapper">Individueel: € 285</span> &bull; <span class="prijs-wrapper">Koppel: € 385</span>
+                        <span class="prijs-wrapper">Individueel: € 345</span> &bull; <span class="prijs-wrapper">Koppel: € 445</span>
                         <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
                     </div>
                 </div>
@@ -775,14 +843,14 @@
                         <h3>The trendy explorer</h3>
                         
                         <div class="traject-details-box">
-                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fas fa-home"></i> 1 sessie van 1,5 uur per week aan huis</div>
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
                         <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
-                        <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
+                        <span class="prijs-wrapper">Individueel: € 245</span> &bull; <span class="prijs-wrapper">Koppel: € 325</span>
                         <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
                     </div>
                 </div>
@@ -795,18 +863,34 @@
                         <h3>Smart future en gadgets</h3>
                         
                         <div class="traject-details-box">
-                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fas fa-home"></i> 1 sessie van 2 uur per week aan huis</div>
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
                         <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
                     <div class="prijs-balk">
-                        <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
+                        <span class="prijs-wrapper">Individueel: € 325</span> &bull; <span class="prijs-wrapper">Koppel: € 415</span>
                         <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
                     </div>
                 </div>
             </div>
+
+            <!-- Standby Service Box -->
+            <div id="standby-service" class="abonnement-container">
+                <div class="abonnement-links">
+                    <span class="abonnement-badge">Exclusieve nazorg</span>
+                    <h3>Permanente Gemoedsrust: Live Free Standby</h3>
+                    <p>Nooit meer onzekerheid na uw traject. Met dit doorlopende service-abonnement heeft u uw tech-coach altijd in uw broekzak. Stuur screenshots of vragen rechtstreeks via WhatsApp en ontvang gegarandeerd binnen 24 uur een helder antwoord of persoonlijk videobericht via onze fair-use regeling. <em>Enkel activeerbaar na afronding van een traject.</em></p>
+                </div>
+                <div class="abonnement-rechts">
+                    <div class="abonnement-prijs">
+                        € 19,00 <span style="font-size:16px; font-weight:600;">/ mnd</span>
+                        <small>exclusief btw</small>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -817,17 +901,17 @@
                 <div class="stap-kaart">
                     <span class="stap-nummer">01</span>
                     <h3>De vrijblijvende intake (10 minuten)</h3>
-                    <p>Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig wat ik voor u kan betekenen en welk traject het beste bij uw noden past.</p>
+                    <p>Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig waar u in uw digitale levensstijl tegenaan loopt en welk traject aansluit.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">02</span>
-                    <h3>Strikte termijn &amp; coaching</h3>
-                    <p>Het traject vindt plaats binnen de vooraf overeengekomen tijdsperiode (2 of 3 weken). De sessies zijn vastgelegd en dienen binnen deze termijn te worden opgenomen; er kan niet van de vooropgestelde planning worden afgeweken. Bezoeken vinden plaats in de vroege avond of het weekend.</p>
+                    <h3>Flexibele planning &amp; maatwerk</h3>
+                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
-                    <h3>De afronding en controle</h3>
-                    <p>Tijdens onze laatste sessie overlopen we alles. Ik overhandig u een persoonlijk naslagwerk in grote, duidelijke letters met al uw stappen. Mocht u daarna permanente gemoedsrust wensen, kunt u eenvoudig overstappen naar een service-abonnement.</p>
+                    <h3>Afronding &amp; achterwacht</h3>
+                    <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Dan stapt u eenvoudig over naar onze exclusieve <a href="#standby-service" class="inline-stap-link">WhatsApp-service</a> voor permanente standby-ondersteuning.</p>
                 </div>
             </div>
         </div>
@@ -841,14 +925,18 @@
                 <!-- Tabel 1: Strakke Prijzen -->
                 <div class="tarieven-box">
                     <div>
-                        <h3>Uurtarieven en trajecten</h3>
+                        <h3>Uurtarieven en speciale diensten</h3>
                         <table class="chique-tabel">
                             <tr>
                                 <td class="tabel-label">Losse uren (Single Hours)<small>Voor acute digitale assistentie, tech-hulp of administratie</small></td>
                                 <td class="tabel-prijs">€ 55,00</td>
                             </tr>
                             <tr>
-                                <td class="tabel-label">Trajectpakketten<small>Vaste all-in modules (2 of 3 weken)</small></td>
+                                <td class="tabel-label">Digitale Belastingbrief (Tax-on-web)<small>Samen en discreet uw online aangifte overlopen en indienen via MyMinfin</small></td>
+                                <td class="tabel-prijs">€ 95,00 <span style="font-size:13px; color:var(--light-gray); font-weight:normal;">eenmalig</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tabel-label">Trajectpakketten<small>Vaste all-in modules (inclusief WhatsApp support)</small></td>
                                 <td class="tabel-prijs" style="color: var(--light-gray); font-weight: normal; font-size: 15px;">Zie overzicht hierboven</td>
                             </tr>
                         </table>
@@ -858,7 +946,7 @@
                     </div>
                 </div>
 
-                <!-- Tabel 2: Verplaatsingen met identieke sub-stijlen -->
+                <!-- Tabel 2: Verplaatsingen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Vaste verplaatsingskosten per rit</h3>
@@ -886,10 +974,10 @@
                     </div>
                 </div>
 
-                <!-- Disclaimer-box -->
+                <!-- Juridisch waterdichte Disclaimer-box -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
-                        <strong>Kwaliteitswaarborg:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Aankopen van hardware of softwarelicenties worden altijd rechtstreeks via uw eigen bankkaart op het moment zelf afgerekend. Persoonlijke inloggegevens worden nooit opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorberekend.
+                        <strong>Kwaliteitswaarborg &amp; NDA:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Bij elke boeking treedt automatisch een bindende geheimhoudingsverklaring (NDA) in werking. Uw persoonlijke en financiële gegevens worden nooit opgeslagen of gedeeld; de consultant is wettelijk aansprakelijk en strafbaar bij misbruik van deze privacygevoelige informatie. Aankopen van hardware worden altijd rechtstreeks via uw eigen bankkaart afgerekend. Eventuele parkeerkosten worden 1-op-1 doorberekend.
                     </p>
                     <div class="link-modal-container">
                         <i class="fas fa-balance-scale" style="margin-right: 6px;"></i> 
@@ -924,9 +1012,9 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3>Algemene Voorwaarden &amp; Aansprakelijkheid</h3>
-            <p><strong>1. Strikte Trajectduur</strong><br>Alle trajecten worden aangegaan voor een vooraf strikt vastgelegde periode (2 of 3 weken). Sessies dienen binnen deze termijn te worden opgenomen; overdracht of afwijking is uitgesloten.</p>
-            <p><strong>2. Annulaties &amp; No-Show Forfaits</strong><br>Kosteloos annuleren kan tot 24 uur voor de geplande afspraak. Annulaties binnen 24 uur voor aanvang resulteren in een administratieve forfaitaire vergoeding van € 45,00 excl. btw. Bij een No-Show (fysiek voor een gesloten deur staan zonder verwittiging) wordt 100% van de sessie (€ 82,50 excl. btw) plus de volledige verplaatsingskost van de desbetreffende zone gefactureerd.</p>
-            <p><strong>3. Absolute Uitsluiting Aansprakelijkheid</strong><br>Roy B. Coaching treedt uitsluitend op als begeleider. De consultant voert transacties nooit zelfstandig uit en bewaart geen inloggegevens. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen, foutieve transacties of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
+            <p><strong>1. Flexibele Trajectuitvoering</strong><br>Alle trajecten worden in overleg gepland en afgestemd op de agenda van de cliënt, met het oog op een vlotte en gerichte voltooiing binnen de vooropgestelde termijn.</p>
+            <p><strong>2. Annulaties &amp; No-Show Forfaits</strong><br>Kosteloos annuleren kan tot 24 uur voor de geplande afspraak. Annulaties binnen 24 uur voor aanvang resulteren in een administratieve forfaitaire vergoeding van € 45,00 excl. btw. Bij een No-Show zonder verwittiging wordt 100% van de geplande sessie plus de verplaatsingskost van de desbetreffende zone gefactureerd.</p>
+            <p><strong>3. Absolute Privacy (NDA) &amp; Aansprakelijkheidsuitsluiting</strong><br>De consultant is gebonden aan een automatische NDA en absolute discretie. Misbruik van gegevens is wettelijk strafbaar. Roy B. Coaching treedt uitsluitend op als begeleider; transacties worden nooit zelfstandig door de consultant uitgevoerd. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
         </div>
     </div>
 
