@@ -300,7 +300,7 @@
             color: var(--primary);
             font-size: 21px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 600;
             line-height: 1.4;
         }
@@ -308,17 +308,39 @@
             font-size: 16px;
             color: #4a5568;
             font-weight: 400;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             line-height: 1.9;
         }
         .traject-duur {
-            display: inline-block;
+            display: block;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--gold);
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
+        }
+        .traject-details-box {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .traject-details-box div {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .traject-details-box div:last-child {
+            margin-bottom: 0;
+        }
+        .traject-details-box i {
+            color: var(--primary);
+            width: 16px;
         }
         .prijs-balk {
             font-size: 17px;
@@ -391,7 +413,7 @@
             line-height: 1.9;
         }
 
-        /* Tarieven Sectie - Snaarstrak & Minimalistisch */
+        /* Tarieven Sectie */
         .tarieven-sectie {
             background-color: var(--bg-light);
             padding: 100px 0;
@@ -437,7 +459,7 @@
         .chique-tabel td {
             padding: 18px 0;
             border-bottom: 1px solid #f4f5f7;
-            vertical-align: middle; /* Alles perfect gecentreerd op 1 lijn */
+            vertical-align: middle;
             font-size: 16px;
         }
         .chique-tabel tr:last-child td {
@@ -461,16 +483,6 @@
             font-weight: 600;
             white-space: nowrap;
         }
-        
-        /* Herwerkte minimalistische regiotekst zonder brekingen */
-        .regio-inline-text {
-            display: block;
-            font-weight: 400;
-            color: var(--light-gray);
-            margin-top: 6px;
-            line-height: 1.5;
-            font-size: 13px;
-        }
 
         .btw-melding-klein {
             margin-top: 25px;
@@ -481,7 +493,7 @@
             font-weight: 400;
         }
 
-        /* Disclaimer en waterdichte afbrekingsfix */
+        /* Disclaimer Box */
         .notitie-box {
             grid-column: 1 / -1;
             background: #ffffff;
@@ -647,7 +659,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive Mobiele Aanpassingen */
+        /* Responsive */
         @media (max-width: 768px) {
             body { font-size: 17px; }
             .hero-links h1 { font-size: 34px; text-align: center; }
@@ -715,7 +727,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persona haal ik mijn grootste energie uit het écht helpen van mensen.</p>
+            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -723,7 +735,7 @@
             
             <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
             
-            <p>Vanuit die filosofie ben ik Live Free stepped. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, yard een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
             
             <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
         </div>
@@ -735,11 +747,18 @@
             <p class="sectie-ondertitel">Vaste pakketten zonder verrassingen achteraf</p>
             
             <div class="diensten-grid">
+                <!-- Traject 1 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="traject-duur">Vaste duur: 3 weken</span>
+                        <span class="traject-duur">Duur module: 3 weken</span>
                         <h3>Modern life en tech executive</h3>
+                        
+                        <div class="traject-details-box">
+                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
+                        </div>
+
                         <p>Breng volledige rust in uw digitale leven. Ik train u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
                     </div>
                     <div class="prijs-balk">
@@ -747,24 +766,40 @@
                         <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
                     </div>
                 </div>
+
+                <!-- Traject 2 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <span class="traject-duur">Vaste duur: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>The trendy explorer</h3>
-                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify volumes en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
+                        
+                        <div class="traject-details-box">
+                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
+                        </div>
+
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
                         <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
                     </div>
                 </div>
+
+                <!-- Traject 3 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="traject-duur">Vaste duur: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>Smart future en gadgets</h3>
-                        <p>Ontdek de kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of het uitdiepen van uw hobby's. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
+                        
+                        <div class="traject-details-box">
+                            <div><i class="fas fa-home"></i> 2 sessies van 2 uur per week aan huis</div>
+                            <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
+                        </div>
+
+                        <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
@@ -803,6 +838,7 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
+                <!-- Tabel 1: Strakke Prijzen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Uurtarieven en trajecten</h3>
@@ -822,6 +858,7 @@
                     </div>
                 </div>
 
+                <!-- Tabel 2: Verplaatsingen met identieke sub-stijlen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Vaste verplaatsingskosten per rit</h3>
@@ -835,10 +872,7 @@
                                 <td class="tabel-prijs">€ 10,00</td>
                             </tr>
                             <tr>
-                                <td class="tabel-label">
-                                    Buiten de Singel tot de rand
-                                    <span class="regio-inline-text">Essen &bull; Zoersel &bull; Mechelen &bull; Halle &bull; Lier</span>
-                                </td>
+                                <td class="tabel-label">Buiten de Singel tot de rand<small>Essen, Zoersel, Mechelen, Halle, Lier, ...</small></td>
                                 <td class="tabel-prijs">€ 20,00</td>
                             </tr>
                             <tr>
@@ -852,6 +886,7 @@
                     </div>
                 </div>
 
+                <!-- Disclaimer-box -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
                         <strong>Kwaliteitswaarborg:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Aankopen van hardware of softwarelicenties worden altijd rechtstreeks via uw eigen bankkaart op het moment zelf afgerekend. Persoonlijke inloggegevens worden nooit opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorberekend.
@@ -884,6 +919,7 @@
         </div>
     </section>
 
+    <!-- Het Pop-up Venster (Modal) -->
     <div id="legalModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
