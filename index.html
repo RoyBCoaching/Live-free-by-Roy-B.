@@ -69,7 +69,7 @@
         .logo-text {
             display: flex;
             flex-direction: column;
-                }
+        }
         .logo-main {
             font-size: 24px;
             font-weight: 800;
@@ -860,6 +860,31 @@
             padding-bottom: 10px;
         }
 
+        /* Volledig Herstelde en Gefixte Vaste Donkerblauwe Footer */
+        footer {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        footer p {
+            margin: 0 0 12px 0;
+        }
+        footer p:last-child {
+            margin-bottom: 0;
+        }
+        .footer-link {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: var(--gold);
+        }
+
         /* Responsive Mobiel */
         @media (max-width: 768px) {
             body { font-size: 17px; }
@@ -872,7 +897,7 @@
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
             
-            /* Mobiele Lay-out */
+            /* Mobiele Lay-out tabel */
             .chique-tabel tr { 
                 display: block; 
                 padding: 20px 0; 
@@ -987,7 +1012,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal mijne grootste energy uit het écht helpen van mensen.</p>
+            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persona haal ik mijn grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -1010,7 +1035,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="traject-duur">Duur module: 3 weeks</span>
+                        <span class="traject-duur">Duur module: 3 weken</span>
                         <h3>Modern life en tech executive</h3>
                         
                         <div class="traject-details-box">
@@ -1029,7 +1054,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <span class="traject-duur">Duur module: 2 weeks</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>The trendy explorer</h3>
                         
                         <div class="traject-details-box">
@@ -1037,7 +1062,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot og zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 245</span> &bull; <span class="prijs-wrapper">Koppel: € 325</span>
@@ -1048,7 +1073,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="traject-duur">Duur module: 2 weeks</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>Smart future en gadgets</h3>
                         
                         <div class="traject-details-box">
@@ -1056,7 +1081,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw active lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
+                        <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 325</span> &bull; <span class="prijs-wrapper">Koppel: € 415</span>
@@ -1143,7 +1168,7 @@
                 <div class="stap-kaart">
                     <span class="stap-nummer">02</span>
                     <h3>Flexibele planning &amp; maatwerk</h3>
-                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
+                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda og persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
