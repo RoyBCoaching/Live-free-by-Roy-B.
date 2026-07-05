@@ -847,7 +847,7 @@
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
             
-            /* Gecorrigeerde Chique Mobiele Lay-out voor de Tabellen */
+            /* Gecorrigeerde Chique Mobiele Lay-out met absolute kleurbehoud */
             .chique-tabel tr { 
                 display: block; 
                 padding: 20px 0; 
@@ -869,13 +869,30 @@
                 font-size: 18px; 
                 font-weight: 800;
                 color: var(--primary);
-                background: var(--gold-light);
+                background: var(--gold-light); /* Standaard neutrale mobiele achtergrond */
                 display: inline-block;
                 padding: 6px 16px !important;
                 border-radius: 4px;
                 border: 1px solid rgba(197, 168, 128, 0.3);
                 width: auto !important;
             }
+            
+            /* Forceer de specifieke premium kleuren op mobiel */
+            .chique-tabel td.tabel-prijs[style*="background: var(--primary)"],
+            .chique-tabel td.tabel-prijs[style*="background:var(--primary)"] {
+                background: var(--primary) !important;
+                color: #ffffff !important;
+                font-size: 14px !important;
+                border: none !important;
+            }
+            .chique-tabel td.tabel-prijs[style*="background: rgba(37, 211, 102, 0.1)"],
+            .chique-tabel td.tabel-prijs[style*="background:rgba(37,211,102,0.1)"] {
+                background: rgba(37, 211, 102, 0.1) !important;
+                color: #1e7e34 !important;
+                font-size: 14px !important;
+                border: none !important;
+            }
+
             .tabel-prijs small {
                 display: inline-block;
                 margin-left: 6px;
@@ -964,7 +981,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="traject-duur">Duur module: 3 weken</span>
+                        <span class="traject-duur">Duur module: 3 weeks</span>
                         <h3>Modern life en tech executive</h3>
                         
                         <div class="traject-details-box">
@@ -983,7 +1000,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <span class="traject-duur">Duur module: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weeks</span>
                         <h3>The trendy explorer</h3>
                         
                         <div class="traject-details-box">
@@ -1002,7 +1019,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="traject-duur">Duur module: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weeks</span>
                         <h3>Smart future en gadgets</h3>
                         
                         <div class="traject-details-box">
@@ -1102,7 +1119,7 @@
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
                     <h3>Afronding &amp; achterwacht</h3>
-                    <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Dan stapt u eenvoudig over naar onze exclusieve <a href="#standby-service" class="inline-stap-link">WhatsApp-service</a> voor permanente standby-ondersteuning.</p>
+                    <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Then stapt u eenvoudig over naar onze exclusieve <a href="#standby-service" class="inline-stap-link">WhatsApp-service</a> voor permanente standby-ondersteuning.</p>
                 </div>
             </div>
         </div>
@@ -1127,7 +1144,7 @@
                             </tr>
                             <tr>
                                 <td class="tabel-label">Trajectpakketten<small>Vaste all-in modules inclusief 2 tot 3 weken WhatsApp-nazorg</small></td>
-                                <td class="tabel-prijs" style="font-weight: 600; font-size: 15px; color: var(--gold); background: var(--primary); color: #fff;">Zie modules</td>
+                                <td class="tabel-prijs" style="background: var(--primary); color: #ffffff;">Zie overzicht</td>
                             </tr>
                         </table>
                     </div>
@@ -1142,7 +1159,7 @@
                         <table class="chique-tabel">
                             <tr>
                                 <td class="tabel-label">Binnen de Leien<small>Centrum Antwerpen (regio Zuid, ...)</small></td>
-                                <td class="tabel-prijs" style="background: rgba(37, 211, 102, 0.1); color: #1e7e34; font-size: 14px;">Inbegrepen</td>
+                                <td class="tabel-prijs" style="background: rgba(37, 211, 102, 0.1); color: #1e7e34;">Inbegrepen</td>
                             </tr>
                             <tr>
                                 <td class="tabel-label">Binnen de Singel<small>Berchem, Borgerhout, de Ring-zone, ...</small></td>
