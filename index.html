@@ -69,7 +69,7 @@
         .logo-text {
             display: flex;
             flex-direction: column;
-        }
+                }
         .logo-main {
             font-size: 24px;
             font-weight: 800;
@@ -684,6 +684,31 @@
             margin-top: 2px;
         }
 
+        /* Desktop Stijlen voor Premium Accenten via Klassen */
+        .chique-tabel td.prijs-blauw {
+            background: var(--primary);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            width: auto;
+        }
+        .chique-tabel td.prijs-groen {
+            background: rgba(37, 211, 102, 0.1);
+            color: #1e7e34;
+            text-align: center;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            width: auto;
+        }
+
         .btw-melding-klein {
             margin-top: 25px;
             font-size: 13px;
@@ -847,7 +872,7 @@
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
             
-            /* Gecorrigeerde Chique Mobiele Lay-out met absolute kleurbehoud */
+            /* Mobiele Lay-out */
             .chique-tabel tr { 
                 display: block; 
                 padding: 20px 0; 
@@ -863,13 +888,15 @@
                 padding-right: 0; 
                 margin-bottom: 12px;
             }
+            
+            /* Standaard mobiele knop (Beige) */
             .tabel-prijs { 
                 text-align: left; 
                 padding-left: 0; 
                 font-size: 18px; 
                 font-weight: 800;
                 color: var(--primary);
-                background: var(--gold-light); /* Standaard neutrale mobiele achtergrond */
+                background: var(--gold-light);
                 display: inline-block;
                 padding: 6px 16px !important;
                 border-radius: 4px;
@@ -877,20 +904,22 @@
                 width: auto !important;
             }
             
-            /* Forceer de specifieke premium kleuren op mobiel */
-            .chique-tabel td.tabel-prijs[style*="background: var(--primary)"],
-            .chique-tabel td.tabel-prijs[style*="background:var(--primary)"] {
+            /* Waterdichte overschrijving voor Premium klassen op Mobiel */
+            .chique-tabel td.prijs-blauw {
                 background: var(--primary) !important;
                 color: #ffffff !important;
                 font-size: 14px !important;
                 border: none !important;
+                display: inline-block !important;
+                padding: 8px 16px !important;
             }
-            .chique-tabel td.tabel-prijs[style*="background: rgba(37, 211, 102, 0.1)"],
-            .chique-tabel td.tabel-prijs[style*="background:rgba(37,211,102,0.1)"] {
+            .chique-tabel td.prijs-groen {
                 background: rgba(37, 211, 102, 0.1) !important;
                 color: #1e7e34 !important;
                 font-size: 14px !important;
                 border: none !important;
+                display: inline-block !important;
+                padding: 8px 16px !important;
             }
 
             .tabel-prijs small {
@@ -1008,7 +1037,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot og zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 245</span> &bull; <span class="prijs-wrapper">Koppel: € 325</span>
@@ -1119,7 +1148,7 @@
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
                     <h3>Afronding &amp; achterwacht</h3>
-                    <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Then stapt u eenvoudig over naar onze exclusieve <a href="#standby-service" class="inline-stap-link">WhatsApp-service</a> voor permanente standby-ondersteuning.</p>
+                    <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Dan stapt u eenvoudig over naar onze exclusieve <a href="#standby-service" class="inline-stap-link">WhatsApp-service</a> voor permanente standby-ondersteuning.</p>
                 </div>
             </div>
         </div>
@@ -1144,7 +1173,7 @@
                             </tr>
                             <tr>
                                 <td class="tabel-label">Trajectpakketten<small>Vaste all-in modules inclusief 2 tot 3 weken WhatsApp-nazorg</small></td>
-                                <td class="tabel-prijs" style="background: var(--primary); color: #ffffff;">Zie overzicht</td>
+                                <td class="tabel-prijs prijs-blauw">Zie overzicht</td>
                             </tr>
                         </table>
                     </div>
@@ -1159,7 +1188,7 @@
                         <table class="chique-tabel">
                             <tr>
                                 <td class="tabel-label">Binnen de Leien<small>Centrum Antwerpen (regio Zuid, ...)</small></td>
-                                <td class="tabel-prijs" style="background: rgba(37, 211, 102, 0.1); color: #1e7e34;">Inbegrepen</td>
+                                <td class="tabel-prijs prijs-groen">Inbegrepen</td>
                             </tr>
                             <tr>
                                 <td class="tabel-label">Binnen de Singel<small>Berchem, Borgerhout, de Ring-zone, ...</small></td>
