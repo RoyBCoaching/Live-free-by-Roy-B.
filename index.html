@@ -518,10 +518,11 @@
             padding-bottom: 10px;
         }
         
+        /* Gecorrigeerde en flexibele tabel-layout */
         .chique-tabel {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed; /* Voorkomt dat kolommen samengedrukt worden */
+            table-layout: auto; /* Staat de browser toe om natuurlijke ruimte te berekenen */
         }
         .chique-tabel td {
             padding: 18px 0;
@@ -533,9 +534,10 @@
             border-bottom: none;
         }
         .tabel-label {
+            width: 100%; /* Eist alle resterende ruimte op */
             color: var(--primary);
             font-weight: 600;
-            padding-right: 20px;
+            padding-right: 25px;
         }
         .tabel-label small {
             display: block;
@@ -545,20 +547,20 @@
             line-height: 1.5;
         }
         
-        /* Gecorrigeerde Prijs Kolom Breedte & Uitlijning */
+        /* Chique prijskolom die NOOIT meer in elkaar klapt */
         .tabel-prijs {
-            width: 175px; /* Vaste brede kolom zodat prijzen en labels nooit afbreken */
             text-align: right;
             color: var(--primary);
             font-weight: 600;
-            white-space: nowrap; /* Garandeert dat tekst op exact één lijn blijft */
+            white-space: nowrap; /* Absoluut verbod op afbreken naar nieuwe regels */
+            padding-left: 15px;
         }
         .tabel-prijs small {
             font-size: 13px;
             color: var(--light-gray);
             font-weight: normal;
             display: inline-block;
-            margin-left: 4px;
+            margin-left: 5px;
         }
 
         .btw-melding-klein {
@@ -736,7 +738,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive */
+        /* Responsive Mobiel */
         @media (max-width: 768px) {
             body { font-size: 17px; }
             .hero-links h1 { font-size: 34px; text-align: center; }
@@ -746,9 +748,9 @@
             header nav { display: none; }
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
-            .chique-tabel { table-layout: auto; }
             .chique-tabel td { display: block; width: 100%; text-align: left; padding: 10px 0; }
-            .tabel-prijs { text-align: left; width: 100%; margin-top: 2px; }
+            .tabel-label { width: 100%; padding-right: 0; }
+            .tabel-prijs { text-align: left; width: 100%; padding-left: 0; margin-top: 2px; }
             .stap-kaart { padding: 40px 25px; }
             .dienst-kaart { padding: 40px 25px; }
             .abonnement-container { padding: 30px 20px; text-align: center; }
@@ -807,7 +809,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching network en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
+            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -815,7 +817,7 @@
             
             <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
             
-            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, om een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
             
             <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
         </div>
@@ -830,7 +832,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="traject-duur">Duur module: 3 weken</span>
+                        <span class="traject-duur">Duur module: 3 weeks</span>
                         <h3>Modern life en tech executive</h3>
                         
                         <div class="traject-details-box">
@@ -849,7 +851,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <span class="traject-duur">Duur module: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weeks</span>
                         <h3>The trendy explorer</h3>
                         
                         <div class="traject-details-box">
@@ -868,7 +870,7 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="traject-duur">Duur module: 2 weken</span>
+                        <span class="traject-duur">Duur module: 2 weeks</span>
                         <h3>Smart future en gadgets</h3>
                         
                         <div class="traject-details-box">
@@ -914,7 +916,7 @@
                 <div class="stap-kaart">
                     <span class="stap-nummer">02</span>
                     <h3>Flexibele planning &amp; maatwerk</h3>
-                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
+                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar what er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
