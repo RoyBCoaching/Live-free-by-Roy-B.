@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Free by Roy B. | Modern lifestyle en tech coaching</title>
-    <!-- Koppeling voor chique lettertype en professionele icoontjes -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -22,7 +21,7 @@
             padding: 0;
             color: var(--text);
             background-color: #ffffff;
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: 18px;
             -webkit-font-smoothing: antialiased;
         }
@@ -130,19 +129,21 @@
             min-width: 350px;
         }
         .hero-links h1 {
-            font-size: 46px;
+            font-size: 44px;
             color: var(--primary);
             margin-top: 0;
             margin-bottom: 25px;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.3;
             letter-spacing: -0.5px;
+            max-width: 90%;
         }
         .hero-links p {
-            font-size: 22px;
+            font-size: 21px;
             color: #4a5568;
             margin-bottom: 35px;
             font-weight: 300;
+            max-width: 95%;
         }
         .status-badge {
             border: 1px solid var(--gold);
@@ -157,7 +158,7 @@
             display: inline-block;
         }
         
-        /* Jouw Foto Integratie */
+        /* Foto Integratie */
         .hero-rechts {
             flex: 0 0 320px;
             display: flex;
@@ -192,9 +193,42 @@
             z-index: 2;
         }
 
+        /* Wie is Roy Sectie */
+        .roy-sectie {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+        .roy-flex {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .roy-tekst {
+            flex: 1;
+            min-width: 350px;
+        }
+        .roy-tekst h2 {
+            font-size: 38px;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        .roy-tekst p {
+            font-size: 17px;
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
         /* Exclusieve Diensten */
         .diensten-sectie {
             padding: 120px 0;
+            background-color: var(--bg-light);
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
         }
         .diensten-sectie h2 {
             text-align: center;
@@ -202,7 +236,6 @@
             color: var(--primary);
             margin-bottom: 10px;
             font-weight: 800;
-            letter-spacing: -0.5px;
         }
         .sectie-ondertitel {
             text-align: center;
@@ -246,10 +279,19 @@
             font-weight: 600;
         }
         .dienst-kaart p {
-            font-size: 17px;
+            font-size: 16px;
             color: #4a5568;
             font-weight: 400;
             margin-bottom: 30px;
+        }
+        .traject-duur {
+            display: inline-block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         .prijs-balk {
             font-size: 18px;
@@ -261,7 +303,55 @@
             letter-spacing: 0.5px;
         }
 
-        /* Tarieven en Gaps */
+        /* Werkwijze Stappenplan */
+        .stappen-sectie {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+        .stappen-sectie h2 {
+            text-align: center;
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 60px;
+            font-weight: 800;
+        }
+        .stappen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .stap-kaart {
+            padding: 30px;
+            border-radius: 4px;
+            background: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        .stap-nummer {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            line-height: 1;
+        }
+        .stap-kaart h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-right: 40px;
+        }
+        .stap-kaart p {
+            font-size: 16px;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* Tarieven */
         .tarieven-sectie {
             background-color: var(--bg-light);
             padding: 120px 0;
@@ -410,7 +500,6 @@
     <header>
         <div class="container header-flex">
             <div class="logo-container">
-                <!-- Subtiel, chique goud-zwart logo -->
                 <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="100" height="100" rx="4" fill="#0B1329"/>
                     <path d="M32 35L50 68L68 35" stroke="#C5A880" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -432,14 +521,34 @@
         <div class="container hero-flex">
             <div class="hero-links">
                 <h1>Leef vrij. Blijf modern. Geniet volop.</h1>
-                <p>Exclusieve hulp aan huis en lifestyle-coaching voor actieve 60-plussers in Antwerpen en omstreken. Wij ontzorgen u van complexe digitale drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
+                <p>Exclusieve hulp aan huis en lifestyle-coaching voor 60-plussers in Antwerpen en omstreken. Ik ontzorg u van complexe digitale drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
                 <span class="status-badge">Strikte discretie &amp; op afspraak</span>
             </div>
             <div class="hero-rechts">
-                <!-- Strakke foto-integratie -->
                 <div class="foto-kader">
-                    <img src="image_521d4d.png" alt="Roy Beauquesne - Live Free">
+                    <img src="Roy.png" alt="Roy Beauquesne - Live Free">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roy-sectie">
+        <div class="container roy-flex">
+            <div class="roy-tekst">
+                <h2>Het gezicht achter Live Free</h2>
+                <p class="sectie-ondertitel" style="text-align: left; margin-bottom: 30px;">Wie is Roy?</p>
+                
+                <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen en vooruithelpen van mensen.</p>
+                
+                <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
+                
+                <p>Net zoals bij veel senioren bracht de digitalisering voor haar vaak grote drempels met zich mee. Hoe graag ik haar ook hielp, in de hectiek van het dagelijkse leven en een drukke agenda was de constante vraag naar digitale ondersteuning soms overweldigend. Hierdoor durfde ik het weleens uitstellen.</p>
+                
+                <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
+                
+                <p>Vanuit die filosofie ben ik Live Free gestart. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+                
+                <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
             </div>
         </div>
     </section>
@@ -453,26 +562,52 @@
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
+                        <span class="traject-duur">Trajectduur: 3 weken</span>
                         <h3>Modern life en tech executive</h3>
-                        <p>Breng volledige rust in uw digitale leven. Wij trainen u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
+                        <p>Breng volledige rust in uw digitale leven. Ik train u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
                     </div>
                     <div class="prijs-balk">Individueel: € 285 | Koppel: € 385 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
                 </div>
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
+                        <span class="traject-duur">Trajectduur: 2 weken</span>
                         <h3>The trendy explorer</h3>
-                        <p>Zorgeloos reizen en genieten van cultuur of horeca. Ontdek hoe u vlot navigeert en boekt via Booking, Airbnb, Uber en Spotify. Als uw actieve assistent boeken we tijdens de sessie samen live een exclusieve theateruitstap of restaurant naar keuze, zodat u het proces direct beheerst.</p>
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
                 </div>
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
+                        <span class="traject-duur">Trajectduur: 2 weken</span>
                         <h3>Smart future en gadgets</h3>
-                        <p>Ontdek de kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of uitdiepen van uw hobby's. Daarnaast optimaliseren we uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de koppeling met uw wagen.</p>
+                        <p>Ontdek de kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of het uitdiepen van uw hobby's. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
                     <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stappen-sectie">
+        <div class="container">
+            <h2>Hoe werkt een traject?</h2>
+            <div class="stappen-grid">
+                <div class="stap-kaart">
+                    <span class="stap-nummer">01</span>
+                    <h3>De vrijblijvende intake (10 minuten)</h3>
+                    <p>Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig wat ik voor u kan betekenen en welk traject het beste bij uw levensstijl past.</p>
+                </div>
+                <div class="stap-kaart">
+                    <span class="stap-nummer">02</span>
+                    <h3>Exclusieve coaching op afspraak</h3>
+                    <p>Ik kom wekelijks bij u aan huis voor een sessie van 1,5 uur (of 2 uur als koppel). Omdat ik geloof in rust, plannen we deze bezoeken in tijdens de vroege avonduren of in het weekend. Tussendoor bewaart u vragen in een handig overzicht.</p>
+                </div>
+                <div class="stap-kaart">
+                    <span class="stap-nummer">03</span>
+                    <h3>De afronding en controle</h3>
+                    <p>Tijdens onze laatste sessie overlopen we alles. Ik overhandig u een persoonlijk naslagwerk in grote, duidelijke letters met al uw stappen. Mocht u daarna permanente gemoedsrust wensen, kunt u eenvoudig overstappen naar een service-abonnement.</p>
                 </div>
             </div>
         </div>
@@ -522,7 +657,7 @@
                 <div class="notitie-box">
                     <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 8px;"></i> 
                     <strong>Privacy- en vertrouwenswaarborg:</strong><br>
-                    Gezien de aard van onze premium diensten hanteren wij een absolute discretieplicht. Live Free fungeert <u>nooit</u> als financiële tussenpersoon of bank. Elke aankoop van hardware (smartphones, tablets) of softwarelicenties (antivirus, iCloud-opslag) gebeurt uitsluitend rechtstreeks met uw eigen bankkaart of Payconiq op het moment zelf. Wachtwoorden of persoonlijke inloggegevens worden onder geen beding door ons bewaard of opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorgerekend.
+                    Gezien de aard van mijn premium diensten hanteer ik een absolute discretieplicht. Live Free fungeert <u>nooit</u> als financiële tussenpersoon of bank. Elke aankoop van hardware of softwarelicenties gebeurt uitsluitend rechtstreeks met uw eigen bankkaart of Payconiq op het moment zelf. Wachtwoorden of persoonlijke inloggegevens worden onder geen beding door mij bewaard of opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorgerekend.
                 </div>
             </div>
         </div>
@@ -531,7 +666,7 @@
     <section class="uren-sectie">
         <div class="container">
             <h2>Contact en bereikbaarheid</h2>
-            <p style="font-size: 20px; margin-bottom: 40px; color: #4a5568; font-weight: 300;">Heeft u een specifieke vraag of wenst u een discreet consult in te plannen? Bekijk hieronder onze telefonische contacturen.</p>
+            <p style="font-size: 20px; margin-bottom: 40px; color: #4a5568; font-weight: 300;">Heeft u een specifieke vraag of wenst u een discreet consult in te plannen? Bekijk hieronder mijn telefonische contacturen.</p>
             
             <div class="uren-box">
                 <h3>Telefonische uren voor niet-abonnees</h3>
