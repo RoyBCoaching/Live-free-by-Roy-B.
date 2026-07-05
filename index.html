@@ -30,14 +30,15 @@
             line-height: 1.8;
             font-size: 18px;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Voorkomt hardnekkige overflow op body-niveau */
         }
 
         .container {
-            width: 88%;
+            width: 90%;
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 0;
+            box-sizing: border-box;
         }
 
         header {
@@ -151,7 +152,7 @@
         }
         .hero-links {
             flex: 1;
-            min-width: 320px;
+            min-width: 300px;
         }
         .hero-links h1 {
             font-size: 48px;
@@ -191,6 +192,7 @@
             flex: 0 0 320px;
             display: flex;
             justify-content: center;
+            max-width: 100%;
         }
         .foto-kader {
             position: relative;
@@ -200,6 +202,7 @@
             border-radius: 4px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.06);
             transition: transform 0.5s ease;
+            max-width: calc(100% - 20px);
         }
         .foto-kader:hover {
             transform: scale(1.02);
@@ -287,6 +290,7 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
         .dienst-kaart:hover {
             transform: translateY(-5px);
@@ -372,10 +376,11 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 30px;
+            box-sizing: border-box;
         }
         .abonnement-links {
             flex: 1;
-            min-width: 300px;
+            min-width: 280px;
         }
         .abonnement-links h3 {
             margin-top: 0;
@@ -403,7 +408,7 @@
         }
         .abonnement-rechts {
             text-align: right;
-            min-width: 200px;
+            min-width: 180px;
         }
         .abonnement-prijs {
             font-size: 26px;
@@ -457,6 +462,7 @@
             padding: 30px 20px;
             border-radius: 4px;
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
         .tracker-kaart:hover {
             background: rgba(255, 255, 255, 0.05);
@@ -501,6 +507,7 @@
             gap: 15px;
             font-size: 13px;
             border-left: 4px solid var(--green);
+            box-sizing: border-box;
         }
         .security-left {
             display: flex;
@@ -541,7 +548,7 @@
         }
         .stappen-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
         }
         .stap-kaart {
@@ -551,6 +558,7 @@
             border: 1px solid #e2e8f0;
             position: relative;
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
         .stap-kaart:hover {
             background: #ffffff;
@@ -607,7 +615,7 @@
         }
         .tarieven-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 40px;
         }
         .tarieven-box {
@@ -619,6 +627,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-sizing: border-box;
         }
         .tarieven-box h3 {
             color: var(--primary);
@@ -630,7 +639,6 @@
             padding-bottom: 10px;
         }
         
-        /* Flexibele en gecorrigeerde tabel-layout */
         .chique-tabel {
             width: 100%;
             border-collapse: collapse;
@@ -693,6 +701,7 @@
             font-size: 14px;
             color: var(--light-gray);
             line-height: 1.7;
+            box-sizing: border-box;
         }
         .disclaimer-tekst {
             margin-bottom: 15px;
@@ -730,6 +739,7 @@
             border-radius: 4px;
             border: 1px solid #e2e8f0;
             text-align: left;
+            box-sizing: border-box;
         }
         .uren-box h3 {
             margin-top: 0;
@@ -823,9 +833,36 @@
             padding-bottom: 10px;
         }
 
-        /* Responsive Mobiel */
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #a0aec0;
+            text-align: center;
+            padding: 50px 0;
+            font-size: 14px;
+            border-top: 3px solid var(--gold);
+        }
+        footer p {
+            margin: 8px 0;
+        }
+        footer strong {
+            color: white;
+        }
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* CRUCIALE RESPONSIVE FIXES: Voorkomt 100% alle horizontale scroll */
         @media (max-width: 768px) {
             body { font-size: 17px; }
+            .container { width: 92%; }
             .hero-links h1 { font-size: 34px; text-align: center; }
             .hero-links p { font-size: 18px; text-align: center; max-width: 100%; }
             .hero-flex { justify-content: center; gap: 30px; }
@@ -833,9 +870,15 @@
             header nav { display: none; }
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
-            .chique-tabel td { display: block; width: 100%; text-align: left; padding: 10px 0; }
-            .tabel-label { width: 100%; padding-right: 0; }
-            .tabel-prijs { text-align: left; width: 100%; padding-left: 0; margin-top: 2px; }
+            
+            /* Stapelt tabelkolommen verticaal op mobiel om horizontaal scrollen volledig te bannen */
+            .chique-tabel tr { display: block; padding: 12px 0; border-bottom: 1px solid #f4f5f7; }
+            .chique-tabel tr:last-child { border-bottom: none; }
+            .chique-tabel td { display: block; width: 100% !important; padding: 0 !important; border-bottom: none; text-align: left; }
+            .tabel-label { padding-right: 0; }
+            .tabel-label small { margin-top: 4px; }
+            .tabel-prijs { text-align: left; padding-left: 0; margin-top: 8px; font-size: 18px; }
+            
             .stap-kaart { padding: 40px 25px; }
             .dienst-kaart { padding: 40px 25px; }
             .abonnement-container { padding: 30px 20px; text-align: center; }
@@ -879,7 +922,6 @@
                     <span>Blijf modern.</span>
                     <span>Geniet volop.</span>
                 </h1>
-                <!-- NIEUW: Jouw ultieme, to-the-point introductietekst -->
                 <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig en met plezier wegwijs in het hedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI wegwijs pakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
                 <span class="status-badge">Enkel op afspraak</span>
             </div>
@@ -948,7 +990,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify og Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 245</span> &bull; <span class="prijs-wrapper">Koppel: € 325</span>
@@ -995,7 +1037,7 @@
         </div>
     </section>
 
-    <!-- Live Impact & Security Monitor Sectie -->
+    <!-- Live Impact & Security Monitor Sectie (Gecorrigeerd naar realistische start-cijfers) -->
     <section class="tracker-sectie">
         <div class="container">
             <div class="tracker-header">
@@ -1006,21 +1048,21 @@
             <div class="tracker-grid">
                 <div class="tracker-kaart">
                     <div class="tracker-icon"><i class="fas fa-users"></i></div>
-                    <div class="tracker-getal" data-target="47">0</div>
+                    <div class="tracker-getal" data-target="7">0</div>
                     <div class="tracker-label">Cliënten Geholpen</div>
                     <div class="tracker-subtext">In regio Antwerpen &amp; rand</div>
                 </div>
                 
                 <div class="tracker-kaart">
                     <div class="tracker-icon"><i class="fas fa-check-circle"></i></div>
-                    <div class="tracker-getal" data-target="124">0</div>
+                    <div class="tracker-getal" data-target="18">0</div>
                     <div class="tracker-label">Tech-drempels Weg</div>
                     <div class="tracker-subtext">Itsme, bankieren &amp; AI-hulp</div>
                 </div>
                 
                 <div class="tracker-kaart">
                     <div class="tracker-icon"><i class="fab fa-whatsapp"></i></div>
-                    <div class="tracker-getal" data-target="18">0</div>
+                    <div class="tracker-getal" data-target="3">0</div>
                     <div class="tracker-label">Actief op Standby</div>
                     <div class="tracker-subtext">Permanente WhatsApp-nazorg</div>
                 </div>
@@ -1049,7 +1091,6 @@
         <div class="container">
             <h2>Hoe werkt een traject?</h2>
             <div class="stappen-grid">
-                <!-- Eerste blok: Duidelijk gratis en op afspraak -->
                 <div class="stap-kaart">
                     <span class="stap-nummer">01</span>
                     <h3>Gratis intake (10 minuten)</h3>
@@ -1074,7 +1115,7 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
-                <!-- Tabel 1: Strakke Prijzen (Nu vlijmscherp op desktop en mobiel) -->
+                <!-- Tabel 1: Uurtarieven -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Uurtarieven en speciale diensten</h3>
@@ -1126,7 +1167,6 @@
                     </div>
                 </div>
 
-                <!-- Juridische disclaimer-box met automatische NDA en strafbaarheid -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
                         <strong>Kwaliteitswaarborg &amp; NDA:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Bij elke boeking treedt automatisch een bindende geheimhoudingsverklaring (NDA) in werking. Uw persoonlijke en financiële gegevens worden nooit opgeslagen of gedeeld; de consultant is wettelijk aansprakelijk en strafbaar bij misbruik van deze privacygevoelige informatie. Aankopen van hardware worden altijd rechtstreeks via uw eigen bankkaart afgerekend. Eventuele parkeerkosten worden 1-op-1 doorberekend.
@@ -1206,13 +1246,13 @@
             const startTellen = (getalElement) => {
                 const doel = +getalElement.getAttribute("data-target");
                 const huidigeWaarde = +getalElement.textContent;
-                const stapgrootte = doel / 40; 
+                const stapgrootte = Math.max(dovel / 40, 1); 
 
                 if (huidigeWaarde < doel) {
                     getalElement.textContent = Math.ceil(huidigeWaarde + stapgrootte);
                     setTimeout(() => startTellen(getalElement), 25);
                 } else {
-                    getalElement.textContent = doel + "+";
+                    getalElement.textContent = doel + (doel === 3 ? "" : "+");
                 }
             };
 
