@@ -4,47 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Free by Roy B. | Modern lifestyle en tech coaching</title>
+    <!-- Koppeling voor chique lettertype en professionele icoontjes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0f172a;    /* Diep donkerblauw voor maximaal contrast */
-            --gold: #d4af37;       /* Warm goud voor de premium afwerking */
-            --accent: #10b981;     /* Rustig groen voor duidelijke status */
-            --text: #1e293b;       /* Donkere, zeer leesbare tekst */
-            --bg-light: #f8fafc;   /* Rustige, witte achtergrond */
+            --primary: #0b1329;    /* Ultra diep midnight blue */
+            --gold: #c5a880;       /* Warm, mat champagne goud */
+            --gold-light: #f4f0ea; /* Zeer zacht goud/beige voor chique achtergronden */
+            --text: #1e293b;       /* Donkergrijs voor perfecte leesbaarheid */
+            --bg-light: #fafafa;   /* Clean off-white */
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             color: var(--text);
             background-color: #ffffff;
-            line-height: 1.6;
-            font-size: 19px; /* Groter lettertype voor optimaal leescomfort */
+            line-height: 1.7;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            width: 90%;
+            width: 85%;
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px 0;
         }
 
-        /* Navigatiebalk */
+        /* Chique Header */
         header {
             background: #ffffff;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 1px solid #ede8f5;
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 15px 0;
+            padding: 20px 0;
         }
         .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
         }
         
         .logo-container {
@@ -57,100 +61,157 @@
             flex-direction: column;
         }
         .logo-main {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             color: var(--primary);
             text-transform: uppercase;
             line-height: 1;
         }
         .logo-sub {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 400;
             color: var(--gold);
-            letter-spacing: 1px;
-            margin-top: 5px;
+            letter-spacing: 2px;
+            margin-top: 6px;
+            text-transform: uppercase;
         }
 
         .contact-knoppen-top {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             align-items: center;
         }
 
         .btn-top {
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .btn-wa-top {
             background-color: #25d366;
             color: white;
         }
+        .btn-wa-top:hover {
+            background-color: #20ba5a;
+        }
         .btn-call-top {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        .btn-call-top:hover {
             background-color: var(--primary);
             color: white;
         }
 
-        /* Introductie met Single Line Art */
+        /* Premium Hero Sectie */
         .hero-sectie {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            padding: 80px 0;
+            background-color: var(--bg-light);
+            padding: 100px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
         .hero-flex {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 60px;
             flex-wrap: wrap;
         }
         .hero-links {
             flex: 1;
-            min-width: 300px;
+            min-width: 350px;
         }
         .hero-links h1 {
-            font-size: 42px;
+            font-size: 46px;
             color: var(--primary);
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 800;
             line-height: 1.2;
+            letter-spacing: -0.5px;
         }
         .hero-links p {
             font-size: 22px;
-            color: #475569;
-            margin-bottom: 30px;
+            color: #4a5568;
+            margin-bottom: 35px;
+            font-weight: 300;
         }
+        .status-badge {
+            border: 1px solid var(--gold);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: white;
+            display: inline-block;
+        }
+        
+        /* Jouw Foto Integratie */
         .hero-rechts {
-            flex: 0 0 250px;
+            flex: 0 0 320px;
             display: flex;
             justify-content: center;
         }
-        .line-art-container {
-            background: white;
-            padding: 20px;
-            border-radius: 50%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        .foto-kader {
+            position: relative;
+            width: 280px;
+            height: 350px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .foto-kader::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 100%;
+            height: 100%;
             border: 2px solid var(--gold);
+            border-radius: 4px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .foto-kader img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Diensten */
+        /* Exclusieve Diensten */
         .diensten-sectie {
-            padding: 80px 0;
+            padding: 120px 0;
         }
         .diensten-sectie h2 {
             text-align: center;
-            font-size: 36px;
+            font-size: 38px;
             color: var(--primary);
             margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
         .sectie-ondertitel {
             text-align: center;
-            color: #64748b;
-            margin-bottom: 50px;
-            font-size: 20px;
+            color: var(--gold);
+            margin-bottom: 60px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
         }
         .diensten-grid {
             display: grid;
@@ -159,62 +220,80 @@
         }
         .dienst-kaart {
             background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            padding: 50px 40px;
+            border-radius: 4px;
+            border: 1px solid #f0f0f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.4s ease;
+        }
+        .dienst-kaart:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11,19,41,0.05);
+            border-color: var(--gold);
+        }
+        .dienst-icon {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 25px;
         }
         .dienst-kaart h3 {
             color: var(--primary);
-            font-size: 24px;
+            font-size: 22px;
             margin-top: 0;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .dienst-kaart p {
+            font-size: 17px;
+            color: #4a5568;
+            font-weight: 400;
+            margin-bottom: 30px;
         }
         .prijs-balk {
-            font-size: 19px;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 600;
             color: var(--primary);
             margin-top: auto;
-            background: #f1f5f9;
-            padding: 12px;
-            border-radius: 6px;
-            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+            letter-spacing: 0.5px;
         }
 
-        /* Tarieven en regels */
+        /* Tarieven en Gaps */
         .tarieven-sectie {
             background-color: var(--bg-light);
-            padding: 80px 0;
-            border-top: 2px solid #e2e8f0;
-            border-bottom: 2px solid #e2e8f0;
+            padding: 120px 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
         }
         .tarieven-sectie h2 {
             text-align: center;
-            font-size: 36px;
+            font-size: 38px;
             color: var(--primary);
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            font-weight: 800;
         }
         .tarieven-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
+            gap: 50px;
         }
         .tarieven-box {
             background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            padding: 45px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border-top: 3px solid var(--gold);
         }
         .tarieven-box h3 {
             color: var(--primary);
             margin-top: 0;
-            font-size: 24px;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         .tarieven-lijst {
             list-style: none;
@@ -222,8 +301,8 @@
             margin: 0;
         }
         .tarieven-lijst li {
-            padding: 14px 0;
-            border-bottom: 1px solid #f1f5f9;
+            padding: 16px 0;
+            border-bottom: 1px solid #f8f9fa;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -233,25 +312,26 @@
         }
         .notitie-box {
             grid-column: 1 / -1;
-            background: #eff6ff;
-            border-left: 5px solid var(--gold);
-            padding: 25px;
-            border-radius: 0 8px 8px 0;
-            font-size: 18px;
+            background: var(--gold-light);
+            border-left: 4px solid var(--gold);
+            padding: 30px;
+            border-radius: 4px;
+            font-size: 17px;
+            color: var(--primary);
         }
 
         /* Contact en Uren Sectie */
         .uren-sectie {
-            padding: 80px 0;
+            padding: 120px 0;
             background: #ffffff;
             text-align: center;
         }
         .uren-box {
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
             background: var(--bg-light);
-            padding: 30px;
-            border-radius: 8px;
+            padding: 40px;
+            border-radius: 4px;
             border: 1px solid #e2e8f0;
             text-align: left;
         }
@@ -259,6 +339,8 @@
             margin-top: 0;
             color: var(--primary);
             text-align: center;
+            font-size: 22px;
+            margin-bottom: 25px;
         }
         .uren-lijst {
             list-style: none;
@@ -266,49 +348,60 @@
             margin: 0;
         }
         .uren-lijst li {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #e2e8f0;
             display: flex;
             justify-content: space-between;
+            font-size: 17px;
         }
         .uren-lijst li:last-child {
             border-bottom: none;
         }
-        .cta-groot {
-            background: #25d366;
-            color: white;
-            font-size: 22px;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-            margin: 10px;
+        .contact-knoppen-onder {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .cta-bellen {
-            background: var(--primary);
+        .cta-groot {
             color: white;
-            font-size: 22px;
-            padding: 18px 40px;
+            font-size: 18px;
+            padding: 18px 36px;
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
-            margin: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .cta-wa {
+            background: #25d366;
+        }
+        .cta-wa:hover {
+            background: #20ba5a;
+        }
+        .cta-call {
+            background: var(--primary);
+        }
+        .cta-call:hover {
+            opacity: 0.9;
         }
 
         footer {
             background: var(--primary);
-            color: white;
+            color: #a0aec0;
             text-align: center;
-            padding: 40px 0;
-            font-size: 16px;
-            border-top: 4px solid var(--gold);
+            padding: 60px 0;
+            font-size: 15px;
+            border-top: 3px solid var(--gold);
         }
         footer p {
-            margin: 8px 0;
+            margin: 6px 0;
+        }
+        footer strong {
+            color: white;
         }
     </style>
 </head>
@@ -317,10 +410,11 @@
     <header>
         <div class="container header-flex">
             <div class="logo-container">
-                <svg width="50" height="50" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="20" fill="#0F172A"/>
-                    <path d="M30 35L50 70L70 35" stroke="#D4AF37" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M45 35L55 52" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+                <!-- Subtiel, chique goud-zwart logo -->
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="4" fill="#0B1329"/>
+                    <path d="M32 35L50 68L68 35" stroke="#C5A880" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M46 35L54 50" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
                 </svg>
                 <div class="logo-text">
                     <span class="logo-main">Live Free</span>
@@ -328,8 +422,8 @@
                 </div>
             </div>
             <div class="contact-knoppen-top">
-                <a href="https://wa.me/32487529489" class="btn-top btn-wa-top">WhatsApp</a>
-                <a href="tel:+32487529489" class="btn-top btn-call-top">Bel Roy</a>
+                <a href="https://wa.me/32487529489" class="btn-top btn-wa-top"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="tel:+32487529489" class="btn-top btn-call-top"><i class="fas fa-phone-alt"></i> Bel Roy</a>
             </div>
         </div>
     </header>
@@ -338,15 +432,13 @@
         <div class="container hero-flex">
             <div class="hero-links">
                 <h1>Leef vrij. Blijf modern. Geniet volop.</h1>
-                <p>Exclusieve hulp aan huis en coaching voor actieve 60-plussers in Antwerpen en omstreken. Wij lossen de moderne, digitale drempels voor u op, zodat u zich kunt focussen op de leuke dingen van het leven.</p>
-                <span style="background: var(--primary); color: white; padding: 8px 15px; border-radius: 4px; font-weight: bold; font-size: 16px;">Altijd strikt op afspraak</span>
+                <p>Exclusieve hulp aan huis en lifestyle-coaching voor actieve 60-plussers in Antwerpen en omstreken. Wij ontzorgen u van complexe digitale drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
+                <span class="status-badge">Strikte discretie &amp; op afspraak</span>
             </div>
             <div class="hero-rechts">
-                <div class="line-art-container">
-                    <svg width="180" height="180" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M35 25C38 15 50 12 60 18C70 24 75 35 72 45C69 55 60 62 55 72C52 78 54 85 50 90C48 92 44 88 45 84C47 76 51 70 48 62C46 56 38 52 32 48C26 44 24 35 28 28" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M45 40C48 38 52 38 55 40" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
+                <!-- Strakke foto-integratie -->
+                <div class="foto-kader">
+                    <img src="image_521d4d.png" alt="Roy Beauquesne - Live Free">
                 </div>
             </div>
         </div>
@@ -354,24 +446,33 @@
 
     <section class="diensten-sectie">
         <div class="container">
-            <h2>Resultaatgerichte trajecten op maat</h2>
-            <p class="sectie-ondertitel">Beschikbaar voor u alleen of gezamenlijk als koppel</p>
+            <h2>Resultaatgerichte trajecten</h2>
+            <p class="sectie-ondertitel">Beschikbaar op individuele basis of als partner-koppel</p>
             
             <div class="diensten-grid">
                 <div class="dienst-kaart">
-                    <h3>Modern life en tech executive</h3>
-                    <p>Volledige onafhankelijkheid op uw apparaten. We installeren en trainen u in het gebruik van itsme, online bankieren en de digitale e-Box van de overheid. Daarnaast beveiligen we uw toestellen proactief tegen fraude en structureren we uw persoonlijke wachtwoordkluis.</p>
-                    <div class="prijs-balk">Individueel: € 285 | Koppel: € 385 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
+                    <div>
+                        <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Modern life en tech executive</h3>
+                        <p>Breng volledige rust in uw digitale leven. Wij trainen u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
+                    </div>
+                    <div class="prijs-balk">Individueel: € 285 | Koppel: € 385 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
                 </div>
                 <div class="dienst-kaart">
-                    <h3>The trendy explorer</h3>
-                    <p>Zorgeloos genieten van cultuur, horeca en reizen. We maken u wegwijs in applicaties zoals Booking, Airbnb, Uber en Spotify. Als uw persoonlijke assistent boeken we tijdens de sessie live een exclusief restaurant of theateruitstap naar uw keuze, zodat u het proces direct beheerst.</p>
-                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
+                    <div>
+                        <div class="dienst-icon"><i class="fas fa-compass"></i></div>
+                        <h3>The trendy explorer</h3>
+                        <p>Zorgeloos reizen en genieten van cultuur of horeca. Ontdek hoe u vlot navigeert en boekt via Booking, Airbnb, Uber en Spotify. Als uw actieve assistent boeken we tijdens de sessie samen live een exclusieve theateruitstap of restaurant naar keuze, zodat u het proces direct beheerst.</p>
+                    </div>
+                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
                 </div>
                 <div class="dienst-kaart">
-                    <h3>Smart future en gadgets</h3>
-                    <p>Ontdek hoe u eenvoudig kunt praten met AI (ChatGPT) om brieven te schrijven of ideeën op te doen voor uw hobby's. Daarnaast koppelen en optimaliseren we uw actieve levensstijl via smartwatches, stappentellers en de synchronisatie met het systeem in uw wagen.</p>
-                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#64748b;">prijzen exclusief btw</small></div>
+                    <div>
+                        <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Smart future en gadgets</h3>
+                        <p>Ontdek de kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of uitdiepen van uw hobby's. Daarnaast optimaliseren we uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de koppeling met uw wagen.</p>
+                    </div>
+                    <div class="prijs-balk">Individueel: € 220 | Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">prijzen exclusief btw</small></div>
                 </div>
             </div>
         </div>
@@ -379,33 +480,29 @@
 
     <section class="tarieven-sectie">
         <div class="container">
-            <h2>Transparante tarieven en verplaatsingen</h2>
+            <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
                 <div class="tarieven-box">
-                    <h3>Uurtarief en forfaits</h3>
+                    <h3>Uurtarief en voorwaarden</h3>
                     <ul class="tarieven-lijst">
                         <li>
-                            <span><strong>Losse uren (Single Hours)</strong><br><small>Voor acute digitale hulp of de belastingbrief</small></span>
+                            <span><strong>Losse uren (Single Hours)</strong><br><small>Voor acute digitale assistentie of de belastingbrief</small></span>
                             <strong>€ 55,00 <small>ex. btw</small></strong>
                         </li>
                         <li>
-                            <span><strong>Persoonlijke spiekbrief (na losse uren)</strong><br><small>Geprinte handleiding in grote letters op maat</small></span>
-                            <strong>€ 15,00 <small>ex. btw</small></strong>
-                        </li>
-                        <li>
-                            <span><strong>Spiekbrief binnen trajecten</strong><br><small>Standaard inbegrepen bij elk vast pakket</small></span>
-                            <span style="color: var(--accent); font-weight: bold;">Inbegrepen</span>
+                            <span><strong>Annulatievoorwaarde</strong><br><small>Kosteloos annuleren tot 24 uur voor aanvang</small></span>
+                            <span style="font-weight: 600; font-size: 16px; color: #e53e3e;">Strikte 24u-regel</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="tarieven-box">
-                    <h3>Verplaatsingskosten per bezoek</h3>
+                    <h3>Vaste verplaatsingskosten</h3>
                     <ul class="tarieven-lijst">
                         <li>
                             <span><strong>Binnen de Leien</strong><br><small>Centrum Antwerpen (regio Zuid, ...)</small></span>
-                            <span style="color: var(--accent); font-weight: bold;">Gratis</span>
+                            <span style="color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">Inbegrepen</span>
                         </li>
                         <li>
                             <span><strong>Binnen de Singel</strong><br><small>Berchem, Borgerhout, de Ring-zone, ...</small></span>
@@ -423,8 +520,9 @@
                 </div>
 
                 <div class="notitie-box">
-                    <strong>Belangrijke afspraak omtrent aankopen en parkeerkosten:</strong><br>
-                    Live Free fungeert nooit als bank of financier voor uw software of apparatuur. Indien we samen overgaan tot de aankoop van hardware (smartphone, tablet) of licenties (antivirus, extra iCloud-opslag), worden deze altijd rechtstreeks via uw eigen bankkaart of Payconiq afgerekend op het moment zelf. Eventuele parkeerkosten op locatie worden transparant 1-op-1 overgenomen uit de parkeer-app en doorgerekend op de factuur.
+                    <i class="fas fa-info-circle" style="color: var(--gold); margin-right: 8px;"></i> 
+                    <strong>Privacy- en vertrouwenswaarborg:</strong><br>
+                    Gezien de aard van onze premium diensten hanteren wij een absolute discretieplicht. Live Free fungeert <u>nooit</u> als financiële tussenpersoon of bank. Elke aankoop van hardware (smartphones, tablets) of softwarelicenties (antivirus, iCloud-opslag) gebeurt uitsluitend rechtstreeks met uw eigen bankkaart of Payconiq op het moment zelf. Wachtwoorden of persoonlijke inloggegevens worden onder geen beding door ons bewaard of opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorgerekend.
                 </div>
             </div>
         </div>
@@ -432,35 +530,35 @@
 
     <section class="uren-sectie">
         <div class="container">
-            <h2>Contact opnemen met Roy</h2>
-            <p style="font-size: 20px; margin-bottom: 30px;">Heeft u een vraag of wilt u een afspraak inplannen? Bekijk hieronder wanneer ik telefonisch bereikbaar ben.</p>
+            <h2>Contact en bereikbaarheid</h2>
+            <p style="font-size: 20px; margin-bottom: 40px; color: #4a5568; font-weight: 300;">Heeft u een specifieke vraag of wenst u een discreet consult in te plannen? Bekijk hieronder onze telefonische contacturen.</p>
             
             <div class="uren-box">
-                <h3>Telefonische contacturen</h3>
+                <h3>Telefonische uren voor niet-abonnees</h3>
                 <ul class="uren-lijst">
-                    <li><span>Maandag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
-                    <li><span>Dinsdag</span><span>12:00 - 14:00</span></li>
-                    <li><span>Woensdag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
-                    <li><span>Donderdag</span><span>12:00 - 14:00</span></li>
-                    <li><span>Vrijdag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
-                    <li><span>Zaterdag &amp; zondag</span><span>Gesloten (enkel op afspraak)</span></li>
+                    <li><span>Maandag, woensdag en vrijdag</span><span>12:00 - 14:00 &nbsp;|&nbsp; 16:00 - 20:00</span></li>
+                    <li><span>Dinsdag en donderdag</span><span>12:00 - 14:00</span></li>
+                    <li><span>Zaterdag en zondag</span><span>Gesloten (enkel voor geplande sessies)</span></li>
                 </ul>
-                <p style="font-size: 15px; color: #64748b; margin-top: 20px; text-align: center; line-height: 1.4;">
-                    <em>Opmerking: Klanten met een lopend service-abonnement genieten van prioritaire toegang en kunnen te allen tijde hun vragen insturen via WhatsApp.</em>
+                <p style="font-size: 15px; color: #718096; margin-top: 25px; text-align: center; line-height: 1.5; font-style: italic;">
+                    Opmerking: Cliënten met een lopend service-abonnement genieten van prioritaire toegang en kunnen te allen tijde hun vragen insturen via WhatsApp buiten deze uren.
                 </p>
             </div>
 
-            <a href="https://wa.me/32487529489" class="cta-groot">Stuur een WhatsApp</a>
-            <a href="tel:+32487529489" class="cta-bellen">Bel Roy direct</a>
+            <div class="contact-knoppen-onder">
+                <a href="https://wa.me/32487529489" class="cta-groot cta-wa"><i class="fab fa-whatsapp"></i> Stuur een WhatsApp</a>
+                <a href="tel:+32487529489" class="cta-groot cta-call"><i class="fas fa-phone-alt"></i> Bel Roy direct</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p><strong>Live Free by Roy B.</strong> is een onderdeel van Roy B. Coaching</p>
+            <p><strong>Live Free by Roy B.</strong> is een geregistreerd kwaliteitslabel van Roy B. Coaching</p>
             <p>E-mail: roybcoaching@gmail.com | Telefoon: +32 487 52 94 89</p>
-            <p>Btw-nummer: BE 102 145 73 12 | Rekeningnummer: DE 81 1001 1001 2947 6911 98</p>
-            <p style="font-size: 14px; color: #94a3b8; margin-top: 20px;">&copy; 2026 Live Free. Alle rechten voorbehouden.</p>
+            <p>Ondernemingsadres: Brederodestraat, Antwerpen</p>
+            <p>Btw-nummer: <strong>BE 102 145 73 12</strong> | Rekeningnummer: <strong>DE 81 1001 1001 2947 6911 98</strong></p>
+            <p style="font-size: 13px; color: #718096; margin-top: 25px;">&copy; 2026 Live Free. Alle rechten voorbehouden. Bescherming van de persoonlijke levenssfeer gegarandeerd.</p>
         </div>
     </footer>
 
