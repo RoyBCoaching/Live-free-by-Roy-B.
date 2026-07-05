@@ -521,6 +521,7 @@
         .chique-tabel {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed; /* Voorkomt dat kolommen samengedrukt worden */
         }
         .chique-tabel td {
             padding: 18px 0;
@@ -534,7 +535,7 @@
         .tabel-label {
             color: var(--primary);
             font-weight: 600;
-            padding-right: 15px;
+            padding-right: 20px;
         }
         .tabel-label small {
             display: block;
@@ -543,11 +544,21 @@
             margin-top: 6px;
             line-height: 1.5;
         }
+        
+        /* Gecorrigeerde Prijs Kolom Breedte & Uitlijning */
         .tabel-prijs {
+            width: 175px; /* Vaste brede kolom zodat prijzen en labels nooit afbreken */
             text-align: right;
             color: var(--primary);
             font-weight: 600;
-            white-space: nowrap;
+            white-space: nowrap; /* Garandeert dat tekst op exact één lijn blijft */
+        }
+        .tabel-prijs small {
+            font-size: 13px;
+            color: var(--light-gray);
+            font-weight: normal;
+            display: inline-block;
+            margin-left: 4px;
         }
 
         .btw-melding-klein {
@@ -735,8 +746,9 @@
             header nav { display: none; }
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
+            .chique-tabel { table-layout: auto; }
             .chique-tabel td { display: block; width: 100%; text-align: left; padding: 10px 0; }
-            .tabel-prijs { text-align: left; margin-top: 2px; }
+            .tabel-prijs { text-align: left; width: 100%; margin-top: 2px; }
             .stap-kaart { padding: 40px 25px; }
             .dienst-kaart { padding: 40px 25px; }
             .abonnement-container { padding: 30px 20px; text-align: center; }
@@ -795,7 +807,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
+            <p>Mijn passie voor coaching network en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -803,7 +815,7 @@
             
             <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
             
-            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, om een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
             
             <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
         </div>
@@ -815,7 +827,6 @@
             <p class="sectie-ondertitel">Vaste pakketten zonder verrassingen achteraf</p>
             
             <div class="diensten-grid">
-                <!-- Traject 1 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
@@ -835,7 +846,6 @@
                     </div>
                 </div>
 
-                <!-- Traject 2 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
@@ -855,7 +865,6 @@
                     </div>
                 </div>
 
-                <!-- Traject 3 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
@@ -876,7 +885,6 @@
                 </div>
             </div>
 
-            <!-- Standby Service Box -->
             <div id="standby-service" class="abonnement-container">
                 <div class="abonnement-links">
                     <span class="abonnement-badge">Exclusieve nazorg</span>
@@ -922,7 +930,6 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
-                <!-- Tabel 1: Strakke Prijzen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Uurtarieven en speciale diensten</h3>
@@ -933,11 +940,11 @@
                             </tr>
                             <tr>
                                 <td class="tabel-label">Digitale Belastingbrief (Tax-on-web)<small>Samen en discreet uw online aangifte overlopen en indienen via MyMinfin</small></td>
-                                <td class="tabel-prijs">€ 95,00 <span style="font-size:13px; color:var(--light-gray); font-weight:normal;">eenmalig</span></td>
+                                <td class="tabel-prijs">€ 95,00<small>eenmalig</small></td>
                             </tr>
                             <tr>
                                 <td class="tabel-label">Trajectpakketten<small>Vaste all-in modules (inclusief WhatsApp support)</small></td>
-                                <td class="tabel-prijs" style="color: var(--light-gray); font-weight: normal; font-size: 15px;">Zie overzicht hierboven</td>
+                                <td class="tabel-prijs" style="font-weight: normal; font-size: 15px; color: var(--light-gray);">Zie overzicht</td>
                             </tr>
                         </table>
                     </div>
@@ -946,7 +953,6 @@
                     </div>
                 </div>
 
-                <!-- Tabel 2: Verplaatsingen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Vaste verplaatsingskosten per rit</h3>
@@ -974,7 +980,6 @@
                     </div>
                 </div>
 
-                <!-- Juridisch waterdichte Disclaimer-box -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
                         <strong>Kwaliteitswaarborg &amp; NDA:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Bij elke boeking treedt automatisch een bindende geheimhoudingsverklaring (NDA) in werking. Uw persoonlijke en financiële gegevens worden nooit opgeslagen of gedeeld; de consultant is wettelijk aansprakelijk en strafbaar bij misbruik van deze privacygevoelige informatie. Aankopen van hardware worden altijd rechtstreeks via uw eigen bankkaart afgerekend. Eventuele parkeerkosten worden 1-op-1 doorberekend.
@@ -1007,7 +1012,6 @@
         </div>
     </section>
 
-    <!-- Het Pop-up Venster (Modal) -->
     <div id="legalModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
