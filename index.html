@@ -13,6 +13,7 @@
             --gold-light: #f4f0ea; 
             --text: #1e293b;       
             --bg-light: #fafafa;   
+            --light-gray: #718096;
         }
 
         html {
@@ -247,7 +248,7 @@
             text-align: justify;
         }
 
-        /* Exclusieve Diensten */
+        /* Exclusieve Diensten met extra innerlijke ademruimte */
         .diensten-sectie {
             padding: 100px 0;
             background-color: var(--bg-light);
@@ -273,13 +274,13 @@
         .diensten-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 30px;
+            gap: 35px;
         }
         .dienst-kaart {
             background: white;
-            padding: 45px 35px;
+            padding: 55px 40px; /* Meer padding binnen de kaarten tegen benauwdheid */
             border-radius: 4px;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -293,20 +294,22 @@
         .dienst-icon {
             font-size: 28px;
             color: var(--gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .dienst-kaart h3 {
             color: var(--primary);
-            font-size: 20px;
+            font-size: 21px;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 600;
+            line-height: 1.4;
         }
         .dienst-kaart p {
             font-size: 16px;
             color: #4a5568;
             font-weight: 400;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
+            line-height: 1.9; /* Betere ademruimte voor de tekst */
         }
         .traject-duur {
             display: inline-block;
@@ -315,17 +318,21 @@
             letter-spacing: 1px;
             color: var(--gold);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .prijs-balk {
             font-size: 17px;
             font-weight: 600;
             color: var(--primary);
             margin-top: auto;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 15px;
+            border-top: 1px solid #ede8f5;
+            padding-top: 25px; /* Meer afstand tot de tekst boven de prijs */
             letter-spacing: 0.5px;
-            white-space: nowrap; /* Voorkomt lelijke orphans en prijsafbrekingen */
+            white-width: 100%;
+        }
+        .prijs-wrapper {
+            display: inline-block;
+            white-space: nowrap; /* Voorkomt prijsafbrekingen op mobile */
         }
 
         /* Werkwijze Stappenplan met extra ademruimte */
@@ -346,13 +353,12 @@
             gap: 40px; /* Meer ruimte tussen de blokken */
         }
         .stap-kaart {
-            padding: 50px 40px; /* Extra padding binnenin de kaarten */
+            padding: 55px 40px; /* Extra padding binnenin de kaarten */
             border-radius: 4px;
             background: var(--bg-light);
             border: 1px solid #e2e8f0;
             position: relative;
             transition: all 0.3s ease;
-            line-height: 1.9; /* Luchtigere tekst */
         }
         .stap-kaart:hover {
             background: #ffffff;
@@ -363,7 +369,7 @@
             font-size: 48px;
             font-weight: 800;
             color: var(--gold);
-            opacity: 0.15;
+            opacity: 0.12;
             position: absolute;
             top: 20px;
             right: 30px;
@@ -376,11 +382,13 @@
             margin-bottom: 20px;
             font-weight: 600;
             padding-right: 40px;
+            line-height: 1.4;
         }
         .stap-kaart p {
             font-size: 16px;
             color: #4a5568;
             margin: 0;
+            line-height: 1.9;
         }
 
         /* Tarieven in een strakke, chique tabelstructuur */
@@ -424,7 +432,7 @@
             border-collapse: collapse;
         }
         .chique-tabel td {
-            padding: 16px 0;
+            padding: 18px 0;
             border-bottom: 1px solid #f4f5f7;
             vertical-align: top;
             font-size: 16px;
@@ -440,60 +448,68 @@
         .tabel-label small {
             display: block;
             font-weight: 400;
-            color: #718096;
-            margin-top: 4px;
-            line-height: 1.4;
+            color: var(--light-gray);
+            margin-top: 6px;
+            line-height: 1.5;
         }
         .tabel-prijs {
             text-align: right;
-            color: var(--gold);
+            color: var(--primary); /* Rustige kleur in plaats van te veel goud */
             font-weight: 600;
             white-space: nowrap;
         }
+        .tabel-prijs-accent {
+            color: var(--light-gray);
+            font-weight: 400;
+        }
         
+        /* Herwerkte minimalistische regio weergave */
         .regio-flex-container {
             display: flex;
-            gap: 20px;
-            margin-top: 8px;
+            gap: 25px;
+            margin-top: 10px;
         }
         .regio-kolom {
             flex: 1;
-            font-size: 13px;
-            color: #718096;
-            line-height: 1.5;
+            font-size: 14px;
+            color: var(--light-gray);
+            line-height: 1.6;
         }
 
-        /* Verbeterde, onopvallende notitiebox */
+        /* Strakke, niet-storende disclaimer en waterdichte afbrekingsfix */
         .notitie-box {
             grid-column: 1 / -1;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            padding: 25px;
+            padding: 30px;
             border-radius: 4px;
             font-size: 14px;
-            color: #718096;
-            line-height: 1.6;
+            color: var(--light-gray);
+            line-height: 1.7;
         }
         .disclaimer-tekst {
             margin-bottom: 15px;
+            margin-top: 0;
         }
         .link-modal-container {
             border-top: 1px solid #e2e8f0;
-            padding-top: 12px;
-            margin-top: 12px;
+            padding-top: 15px;
+            margin-top: 15px;
         }
         .link-modal {
             color: var(--primary);
             text-decoration: underline;
             cursor: pointer;
             font-weight: 600;
+            display: inline-block; /* Fix tegen lossnijden van zinsdelen */
+            white-space: nowrap;   /* Fix tegen lelijke woordbreking */
             transition: color 0.2s ease;
         }
         .link-modal:hover {
             color: var(--gold);
         }
 
-        /* Boekingssysteem & Bereikbaarheid */
+        /* Contact en Bereikbaarheid */
         .uren-sectie {
             padding: 100px 0;
             background: #ffffff;
@@ -529,26 +545,6 @@
         }
         .uren-lijst li:last-child {
             border-bottom: none;
-        }
-        
-        /* Subtiele TidyCal Boekingsomgeving */
-        .agenda-sectie {
-            max-width: 800px;
-            margin: 40px auto 0 auto;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 40px;
-        }
-        .agenda-sectie h4 {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        .agenda-wrapper {
-            background: var(--bg-light);
-            border-radius: 4px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .contact-knoppen-onder {
@@ -656,10 +652,11 @@
             header nav { display: none; }
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
-            .regio-flex-container { flex-direction: column; gap: 8px; }
-            .chique-tabel td { display: block; width: 100%; text-align: left; padding: 8px 0; }
-            .tabel-prijs { text-align: left; color: var(--gold); margin-top: 2px; }
-            .stap-kaart { padding: 35px 25px; }
+            .regio-flex-container { flex-direction: column; gap: 4px; }
+            .chique-tabel td { display: block; width: 100%; text-align: left; padding: 10px 0; }
+            .tabel-prijs { text-align: left; margin-top: 2px; }
+            .stap-kaart { padding: 40px 25px; }
+            .dienst-kaart { padding: 40px 25px; }
         }
     </style>
 </head>
@@ -682,7 +679,6 @@
                 <a href="#roy">Wie is Roy</a>
                 <a href="#trajecten">Trajecten</a>
                 <a href="#tarieven">Tarieven</a>
-                <a href="#boeken">Agenda</a>
             </nav>
             <div class="contact-knoppen-top">
                 <a href="https://wa.me/32487529489" class="btn-top btn-wa-top"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -699,7 +695,7 @@
                     <span>Blijf modern.</span>
                     <span>Geniet volop.</span>
                 </h1>
-                <p>Exclusieve hulp aan huis en digital-coaching voor mensen die hulp nodig hebben in Antwerpen en omstreken. Ik ontzorg u van complexe drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
+                <p>Exclusieve hulp aan huis en digital-coaching voor mensen die hulp nodig hebben. Ik ontzorg u van complexe drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
                 <span class="status-badge">Enkel op afspraak</span>
             </div>
             <div class="hero-rechts">
@@ -715,7 +711,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen en vooruithelpen van mensen.</p>
+            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -742,7 +738,10 @@
                         <h3>Modern life en tech executive</h3>
                         <p>Breng volledige rust in uw digitale leven. Ik train u geduldig in het zelfstandig beheren van itsme, online bankieren en de overheids-e-Box. Tevens beveiligen we uw apparaten tegen phishing-fraude en structureren we een waterdichte, persoonlijke wachtwoordkluis.</p>
                     </div>
-                    <div class="prijs-balk">Individueel: € 285 &bull; Koppel: € 385 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">exclusief btw</small></div>
+                    <div class="prijs-balk">
+                        <span class="prijs-wrapper">Individueel: € 285</span> &bull; <span class="prijs-wrapper">Koppel: € 385</span>
+                        <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
+                    </div>
                 </div>
                 <div class="dienst-kaart">
                     <div>
@@ -751,16 +750,22 @@
                         <h3>The trendy explorer</h3>
                         <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
-                    <div class="prijs-balk">Individueel: € 220 &bull; Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">exclusief btw</small></div>
+                    <div class="prijs-balk">
+                        <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
+                        <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
+                    </div>
                 </div>
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
                         <span class="traject-duur">Vaste duur: 2 weken</span>
                         <h3>Smart future en gadgets</h3>
-                        <p>Ontdek the kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of het uitdiepen van uw hobby's. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
+                        <p>Ontdek de kracht en het gemak van praten met kunstmatige intelligentie (ChatGPT) voor het opstellen van brieven of het uitdiepen van uw hobby's. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
-                    <div class="prijs-balk">Individueel: € 220 &bull; Koppel: € 295 <br><small style="font-weight:normal; color:#718096; font-size: 13px;">exclusief btw</small></div>
+                    <div class="prijs-balk">
+                        <span class="prijs-wrapper">Individueel: € 220</span> &bull; <span class="prijs-wrapper">Koppel: € 295</span>
+                        <br><small style="font-weight:normal; color: var(--light-gray); font-size: 13px;">exclusief btw</small>
+                    </div>
                 </div>
             </div>
         </div>
@@ -794,25 +799,25 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
-                <!-- Tabel 1: Uurtarieven en Voorwaarden -->
+                <!-- Tabel 1: Uurtarieven -->
                 <div class="tarieven-box">
                     <h3>Uurtarief en trajectvoorwaarden</h3>
                     <table class="chique-tabel">
                         <tr>
                             <td class="tabel-label">Losse uren (Single Hours)<small>Voor acute digitale assistentie of administratie</small></td>
-                            <td class="tabel-prijs">€ 55,00 <small>ex. btw</small></td>
+                            <td class="tabel-prijs">€ 55,00 <span class="tabel-prijs-accent">ex. btw</span></td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Trajectpakketten<small>Vaste all-in tarieven per modules</small></td>
-                            <td class="tabel-prijs">Zie overzicht</td>
+                            <td class="tabel-prijs" style="color: var(--light-gray); font-weight: normal;">Zie overzicht</td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Annulatie (vóór 24 uur)<small>Kosteloos annuleren van uw geplande afspraak</small></td>
-                            <td class="tabel-prijs" style="color: #25d366;">Gratis</td>
+                            <td class="tabel-prijs">Gratis</td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Laattijdige annulatie (binnen 24 uur)<small>Forfaitaire administratieve en logistieke vergoeding</small></td>
-                            <td class="tabel-prijs">€ 45,00 <small>ex. btw</small></td>
+                            <td class="tabel-prijs">€ 45,00 <span class="tabel-prijs-accent">ex. btw</span></td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Niet aanwezig zonder verwittiging (No-Show)<small>Fysiek voor een gesloten deur staan</small></td>
@@ -821,44 +826,44 @@
                     </table>
                 </div>
 
-                <!-- Tabel 2: Verplaatsingskosten -->
+                <!-- Tabel 2: Verplaatsingen -->
                 <div class="tarieven-box">
                     <h3>Vaste verplaatsingskosten per rit</h3>
                     <table class="chique-tabel">
                         <tr>
                             <td class="tabel-label">Binnen de Leien<small>Centrum Antwerpen (regio Zuid, ...)</small></td>
-                            <td class="tabel-prijs" style="text-transform: uppercase; font-size: 13px;">Inbegrepen</td>
+                            <td class="tabel-prijs" style="text-transform: uppercase; font-size: 13px; color: var(--light-gray); font-weight: normal;">Inbegrepen</td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Binnen de Singel<small>Berchem, Borgerhout, de Ring-zone, ...</small></td>
-                            <td class="tabel-prijs">€ 10,00 <small>ex. btw</small></td>
+                            <td class="tabel-prijs">€ 10,00 <span class="tabel-prijs-accent">ex. btw</span></td>
                         </tr>
                         <tr>
                             <td class="tabel-label">
                                 Buiten de Singel tot de rand
                                 <div class="regio-flex-container">
-                                    <div class="regio-kolom">&bull; Essen<br>&bull; Zoersel</div>
-                                    <div class="regio-kolom">&bull; Mechelen<br>&bull; Halle</div>
-                                    <div class="regio-kolom">&bull; Lier</div>
+                                    <div class="regio-kolom">Essen<br>Zoersel</div>
+                                    <div class="regio-kolom">Mechelen<br>Halle</div>
+                                    <div class="regio-kolom">Lier</div>
                                 </div>
                             </td>
-                            <td class="tabel-prijs" style="vertical-align: middle;">€ 20,00 <small>ex. btw</small></td>
+                            <td class="tabel-prijs" style="vertical-align: middle;">€ 20,00 <span class="tabel-prijs-accent">ex. btw</span></td>
                         </tr>
                         <tr>
                             <td class="tabel-label">Waasland (via de tunnel)<small>Regio Linkeroever tot Sint-Niklaas</small></td>
-                            <td class="tabel-prijs">€ 30,00 <small>ex. btw</small></td>
+                            <td class="tabel-prijs">€ 30,00 <span class="tabel-prijs-accent">ex. btw</span></td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Verbeterde, rustige en kleinere disclaimer-weergave -->
+                <!-- Strakke Disclaimer-box met onbreekbare link -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
                         <strong>Kwaliteitswaarborg:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Aankopen van hardware of softwarelicenties worden altijd rechtstreeks via uw eigen bankkaart op het moment zelf afgerekend. Persoonlijke inloggegevens worden nooit opgeslagen. Eventuele parkeerkosten op locatie worden 1-op-1 op basis van de parkeer-app doorberekend.
                     </p>
                     <div class="link-modal-container">
                         <i class="fas fa-balance-scale" style="margin-right: 6px;"></i> 
-                        Voor de volledige juridische uitsluiting van aansprakelijkheid en gedetailleerde boetebepalingen verwijzen wij naar onze 
+                        Voor de volledige uitsluiting van aansprakelijkheid en gedetailleerde boetebepalingen verwijzen wij naar onze 
                         <span class="link-modal" onclick="openModal()">Algemene Voorwaarden &amp; Aansprakelijkheidsverklaring</span>.
                     </div>
                 </div>
@@ -866,7 +871,7 @@
         </div>
     </section>
 
-    <section id="boeken" class="uren-sectie">
+    <section class="uren-sectie">
         <div class="container">
             <h2>Contact en bereikbaarheid</h2>
             <div class="uren-box">
@@ -877,16 +882,6 @@
                     <li><span>Zaterdag en zondag</span><span>Gesloten (enkel voor geplande sessies)</span></li>
                 </ul>
             </div>
-
-            <!-- Ingebouwd TidyCal Boekingssysteem -->
-            <div class="agenda-sectie">
-                <h4>Plan direct uw vrijblijvende intake</h4>
-                <div class="agenda-wrapper">
-                    <!-- Vervang onderstaande URL met je eigen TidyCal embed link zodra je account live staat -->
-                    <iframe src="https://tidycal.com/" width="100%" height="600" frameborder="0" style="border:none;"></iframe>
-                </div>
-            </div>
-
             <div class="contact-knoppen-onder">
                 <a href="https://wa.me/32487529489" class="cta-groot cta-wa"><i class="fab fa-whatsapp"></i> WhatsApp sturen</a>
                 <a href="tel:+32487529489" class="cta-groot cta-call"><i class="fas fa-phone-alt"></i> Roy direct bellen</a>
@@ -901,7 +896,7 @@
             <h3>Algemene Voorwaarden &amp; Aansprakelijkheid</h3>
             <p><strong>1. Strikte Trajectduur</strong><br>Alle trajecten worden aangegaan voor een vooraf strikt vastgelegde periode (2 of 3 weken). Sessies dienen binnen deze termijn te worden opgenomen; overdracht of afwijking is uitgesloten.</p>
             <p><strong>2. Annulaties &amp; No-Show Forfaits</strong><br>Annulaties binnen 24 uur voor aanvang resulteren in een administratieve boete van € 45,00 excl. btw. Bij een No-Show (niet aanwezig zonder verwittiging) wordt 100% van de sessie (€ 82,50 excl. btw) plus de volledige verplaatsingskost van de desbetreffende zone gefactureerd.</p>
-            <p><strong>3. Absolute Uitsluiting Aansprakelijkheid</strong><br>Roy B. Coaching treedt uitsluitend op als begeleider. De consultant voert transacties nooit zelfstandig uit en bewaart geen inloggegevens. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen, foutieve transacties of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
+            <p><strong>3. Absolute Uitsluiting Aansprakelijkheid</strong><br>Roy B. Coaching treedt uitsluitend op als begeleider. De consultant voert transacties nooit zelfstandig uit en bewaart geen inloggegevens. Roy B. Coaching kan onder geen beding aanspakelelijk worden gesteld voor directe of indirecte schade, verliezen, foutieve transacties of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
         </div>
     </div>
 
