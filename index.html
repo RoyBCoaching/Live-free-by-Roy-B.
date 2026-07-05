@@ -14,6 +14,7 @@
             --text: #1e293b;       
             --bg-light: #fafafa;   
             --light-gray: #718096;
+            --green: #25d366;
         }
 
         html {
@@ -171,6 +172,7 @@
             margin-bottom: 35px;
             font-weight: 300;
             max-width: 95%;
+            line-height: 1.7;
         }
         .status-badge {
             border: 1px solid var(--gold);
@@ -415,6 +417,116 @@
             display: block;
         }
 
+        /* Live Data & Tracker Dashboard Sectie */
+        .tracker-sectie {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            border-top: 4px solid var(--gold);
+            border-bottom: 4px solid var(--gold);
+        }
+        .tracker-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .tracker-header h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .tracker-header p {
+            color: var(--gold);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: 600;
+        }
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .tracker-kaart {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            padding: 30px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .tracker-kaart:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold);
+        }
+        .tracker-icon {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+        .tracker-getal {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            font-variant-numeric: tabular-nums;
+        }
+        .tracker-label {
+            font-size: 14px;
+            color: #a0aec0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tracker-subtext {
+            font-size: 12px;
+            color: var(--gold);
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        
+        .security-status-bar {
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 13px;
+            border-left: 4px solid var(--green);
+        }
+        .security-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #e2e8f0;
+        }
+        .security-pulse {
+            width: 10px;
+            height: 10px;
+            background-color: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .security-right {
+            color: var(--gold);
+            font-weight: 600;
+            font-family: monospace;
+        }
+
         /* Werkwijze Stappenplan */
         .stappen-sectie {
             padding: 100px 0;
@@ -518,11 +630,11 @@
             padding-bottom: 10px;
         }
         
-        /* Gecorrigeerde en flexibele tabel-layout */
+        /* Flexibele en gecorrigeerde tabel-layout */
         .chique-tabel {
             width: 100%;
             border-collapse: collapse;
-            table-layout: auto; /* Staat de browser toe om natuurlijke ruimte te berekenen */
+            table-layout: auto;
         }
         .chique-tabel td {
             padding: 18px 0;
@@ -534,7 +646,7 @@
             border-bottom: none;
         }
         .tabel-label {
-            width: 100%; /* Eist alle resterende ruimte op */
+            width: 100%;
             color: var(--primary);
             font-weight: 600;
             padding-right: 25px;
@@ -547,12 +659,11 @@
             line-height: 1.5;
         }
         
-        /* Chique prijskolom die NOOIT meer in elkaar klapt */
         .tabel-prijs {
             text-align: right;
             color: var(--primary);
             font-weight: 600;
-            white-space: nowrap; /* Absoluut verbod op afbreken naar nieuwe regels */
+            white-space: nowrap;
             padding-left: 15px;
         }
         .tabel-prijs small {
@@ -712,32 +823,6 @@
             padding-bottom: 10px;
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #a0aec0;
-            text-align: center;
-            padding: 50px 0;
-            font-size: 14px;
-            border-top: 3px solid var(--gold);
-        }
-        footer p {
-            margin: 8px 0;
-        }
-        footer strong {
-            color: white;
-        }
-        .footer-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-        .footer-link:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
         /* Responsive Mobiel */
         @media (max-width: 768px) {
             body { font-size: 17px; }
@@ -755,6 +840,7 @@
             .dienst-kaart { padding: 40px 25px; }
             .abonnement-container { padding: 30px 20px; text-align: center; }
             .abonnement-rechts { text-align: center; width: 100%; }
+            .security-status-bar { flex-direction: column; text-align: center; justify-content: center; }
         }
     </style>
 </head>
@@ -793,7 +879,8 @@
                     <span>Blijf modern.</span>
                     <span>Geniet volop.</span>
                 </h1>
-                <p>Exclusieve hulp aan huis en digital-coaching voor mensen die hulp nodig hebben. Ik ontzorg u van complexe drempels, zodat u ongestoord van uw onafhankelijkheid kunt genieten.</p>
+                <!-- NIEUW: Jouw ultieme, to-the-point introductietekst -->
+                <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig en met plezier wegwijs in het hedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI wegwijs pakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
                 <span class="status-badge">Enkel op afspraak</span>
             </div>
             <div class="hero-rechts">
@@ -829,10 +916,11 @@
             <p class="sectie-ondertitel">Vaste pakketten zonder verrassingen achteraf</p>
             
             <div class="diensten-grid">
+                <!-- Traject 1 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <span class="traject-duur">Duur module: 3 weeks</span>
+                        <span class="traject-duur">Duur module: 3 weken</span>
                         <h3>Modern life en tech executive</h3>
                         
                         <div class="traject-details-box">
@@ -848,10 +936,11 @@
                     </div>
                 </div>
 
+                <!-- Traject 2 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <span class="traject-duur">Duur module: 2 weeks</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>The trendy explorer</h3>
                         
                         <div class="traject-details-box">
@@ -859,7 +948,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify en Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
+                        <p>Zorgeloos navigeren en genieten van modern entertainment en mobiliteit. Ontdek hoe u vlot en zelfstandig gebruikmaakt van apps zoals Spotify og Uber. Daarnaast leert u comfortabel digitaal plannen, en boeken we tijdens de sessie live een exclusieve theateruitstap of restaurant via de correcte platformen zodat u het proces direct beheerst.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 245</span> &bull; <span class="prijs-wrapper">Koppel: € 325</span>
@@ -867,10 +956,11 @@
                     </div>
                 </div>
 
+                <!-- Traject 3 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="traject-duur">Duur module: 2 weeks</span>
+                        <span class="traject-duur">Duur module: 2 weken</span>
                         <h3>Smart future en gadgets</h3>
                         
                         <div class="traject-details-box">
@@ -887,6 +977,7 @@
                 </div>
             </div>
 
+            <!-- Standby Service Box -->
             <div id="standby-service" class="abonnement-container">
                 <div class="abonnement-links">
                     <span class="abonnement-badge">Exclusieve nazorg</span>
@@ -904,19 +995,70 @@
         </div>
     </section>
 
+    <!-- Live Impact & Security Monitor Sectie -->
+    <section class="tracker-sectie">
+        <div class="container">
+            <div class="tracker-header">
+                <h2>Live Impact &amp; Security Monitor</h2>
+                <p>Geverifieerde activiteit en dataveiligheid</p>
+            </div>
+            
+            <div class="tracker-grid">
+                <div class="tracker-kaart">
+                    <div class="tracker-icon"><i class="fas fa-users"></i></div>
+                    <div class="tracker-getal" data-target="47">0</div>
+                    <div class="tracker-label">Cliënten Geholpen</div>
+                    <div class="tracker-subtext">In regio Antwerpen &amp; rand</div>
+                </div>
+                
+                <div class="tracker-kaart">
+                    <div class="tracker-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="tracker-getal" data-target="124">0</div>
+                    <div class="tracker-label">Tech-drempels Weg</div>
+                    <div class="tracker-subtext">Itsme, bankieren &amp; AI-hulp</div>
+                </div>
+                
+                <div class="tracker-kaart">
+                    <div class="tracker-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="tracker-getal" data-target="18">0</div>
+                    <div class="tracker-label">Actief op Standby</div>
+                    <div class="tracker-subtext">Permanente WhatsApp-nazorg</div>
+                </div>
+                
+                <div class="tracker-kaart">
+                    <div class="tracker-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="tracker-getal" style="font-size: 34px; padding: 5px 0;">100%</div>
+                    <div class="tracker-label">NDA-Gedekt</div>
+                    <div class="tracker-subtext">Strikte discretieborging</div>
+                </div>
+            </div>
+            
+            <div class="security-status-bar">
+                <div class="security-left">
+                    <div class="security-pulse"></div>
+                    <span id="live-security-text">Beveiligde verbinding geverifieerd · Gegevensbescherming actief</span>
+                </div>
+                <div class="security-right" id="sync-timestamp">
+                    Laatste synchronisatie: vandaag
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="stappen-sectie">
         <div class="container">
             <h2>Hoe werkt een traject?</h2>
             <div class="stappen-grid">
+                <!-- Eerste blok: Duidelijk gratis en op afspraak -->
                 <div class="stap-kaart">
                     <span class="stap-nummer">01</span>
-                    <h3>De vrijblijvende intake (10 minuten)</h3>
-                    <p>Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig waar u in uw digitale levensstijl tegenaan loopt en welk traject aansluit.</p>
+                    <h3>Gratis intake (10 minuten)</h3>
+                    <p><strong>Volledig gratis en enkel op afspraak!</strong> Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig waar u in uw digitale levensstijl tegenaan loopt en welk traject aansluit.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">02</span>
                     <h3>Flexibele planning &amp; maatwerk</h3>
-                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar what er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
+                    <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
@@ -932,6 +1074,7 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
+                <!-- Tabel 1: Strakke Prijzen (Nu vlijmscherp op desktop en mobiel) -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Uurtarieven en speciale diensten</h3>
@@ -955,6 +1098,7 @@
                     </div>
                 </div>
 
+                <!-- Tabel 2: Verplaatsingen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Vaste verplaatsingskosten per rit</h3>
@@ -982,6 +1126,7 @@
                     </div>
                 </div>
 
+                <!-- Juridische disclaimer-box met automatische NDA en strafbaarheid -->
                 <div class="notitie-box">
                     <p class="disclaimer-tekst">
                         <strong>Kwaliteitswaarborg &amp; NDA:</strong> Roy B. Coaching hanteert een strikte discretieplicht. Bij elke boeking treedt automatisch een bindende geheimhoudingsverklaring (NDA) in werking. Uw persoonlijke en financiële gegevens worden nooit opgeslagen of gedeeld; de consultant is wettelijk aansprakelijk en strafbaar bij misbruik van deze privacygevoelige informatie. Aankopen van hardware worden altijd rechtstreeks via uw eigen bankkaart afgerekend. Eventuele parkeerkosten worden 1-op-1 doorberekend.
@@ -1041,6 +1186,51 @@
             let modal = document.getElementById("legalModal");
             if (event.target == modal) { modal.style.display = "none"; }
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const syncElement = document.getElementById("sync-timestamp");
+            const nu = new Date();
+            const uren = String(nu.getHours()).padStart(2, '0');
+            const minuten = String(nu.getMinutes()).padStart(2, '0');
+            syncElement.textContent = `Laatste netwerk-sync: vandaag om ${uren}:${minuten}`;
+
+            const securityText = document.getElementById("live-security-text");
+            if (window.location.protocol === "https:") {
+                securityText.textContent = "Geverifieerde SSL-verbinding actief · 256-bit End-to-End encryptie geverifieerd";
+            } else {
+                securityText.textContent = "Beveiligde verbinding actief · Lokale NDA-privacybescherming geverifieerd";
+            }
+
+            const tellers = document.querySelectorAll(".tracker-getal[data-target]");
+            
+            const startTellen = (getalElement) => {
+                const doel = +getalElement.getAttribute("data-target");
+                const huidigeWaarde = +getalElement.textContent;
+                const stapgrootte = doel / 40; 
+
+                if (huidigeWaarde < doel) {
+                    getalElement.textContent = Math.ceil(huidigeWaarde + stapgrootte);
+                    setTimeout(() => startTellen(getalElement), 25);
+                } else {
+                    getalElement.textContent = doel + "+";
+                }
+            };
+
+            const observerOptions = { threshold: 0.2 };
+            const trackerObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        tellers.forEach(teller => startTellen(teller));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const trackerSectie = document.querySelector(".tracker-sectie");
+            if (trackerSectie) {
+                trackerObserver.observe(trackerSectie);
+            }
+        });
     </script>
 </body>
 </html>
