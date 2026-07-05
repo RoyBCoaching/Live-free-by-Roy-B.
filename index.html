@@ -30,7 +30,7 @@
             line-height: 1.8;
             font-size: 18px;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; /* Voorkomt hardnekkige overflow op body-niveau */
+            overflow-x: hidden;
         }
 
         .container {
@@ -833,33 +833,7 @@
             padding-bottom: 10px;
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #a0aec0;
-            text-align: center;
-            padding: 50px 0;
-            font-size: 14px;
-            border-top: 3px solid var(--gold);
-        }
-        footer p {
-            margin: 8px 0;
-        }
-        footer strong {
-            color: white;
-        }
-        .footer-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-        .footer-link:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        /* CRUCIALE RESPONSIVE FIXES: Voorkomt 100% alle horizontale scroll */
+        /* Responsive Mobiel */
         @media (max-width: 768px) {
             body { font-size: 17px; }
             .container { width: 92%; }
@@ -871,7 +845,6 @@
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             .tarieven-grid { grid-template-columns: 1fr; }
             
-            /* Stapelt tabelkolommen verticaal op mobiel om horizontaal scrollen volledig te bannen */
             .chique-tabel tr { display: block; padding: 12px 0; border-bottom: 1px solid #f4f5f7; }
             .chique-tabel tr:last-child { border-bottom: none; }
             .chique-tabel td { display: block; width: 100% !important; padding: 0 !important; border-bottom: none; text-align: left; }
@@ -922,7 +895,7 @@
                     <span>Blijf modern.</span>
                     <span>Geniet volop.</span>
                 </h1>
-                <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig en met plezier wegwijs in het hedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI wegwijs pakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
+                <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig en met plezier wegwijs in het gedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI wegwijs pakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
                 <span class="status-badge">Enkel op afspraak</span>
             </div>
             <div class="hero-rechts">
@@ -938,7 +911,7 @@
             <h2>Het gezicht achter Live Free</h2>
             <p class="sectie-ondertitel">Wie is Roy?</p>
             
-            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal ik mijn grootste energie uit het écht helpen van mensen.</p>
+            <p>Mijn passie voor coaching en hospitality zit diep in mij geworteld; het is er met de paplepel ingegoten. Als extravert persoon haal mijne grootste energie uit het écht helpen van mensen.</p>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
@@ -958,7 +931,6 @@
             <p class="sectie-ondertitel">Vaste pakketten zonder verrassingen achteraf</p>
             
             <div class="diensten-grid">
-                <!-- Traject 1 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
@@ -978,7 +950,6 @@
                     </div>
                 </div>
 
-                <!-- Traject 2 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-compass"></i></div>
@@ -998,7 +969,6 @@
                     </div>
                 </div>
 
-                <!-- Traject 3 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-laptop-code"></i></div>
@@ -1010,7 +980,7 @@
                             <div><i class="fab fa-whatsapp"></i> Exclusieve video- &amp; chat-support</div>
                         </div>
 
-                        <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw actieve lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
+                        <p>Ontdek het gemak van slimme <strong>AI-tools zoals ChatGPT</strong>. Ik leer u hoe u hiermee in een handomdraai officiële brieven opstelt, ingewikkelde teksten samenvat, leuke ideeën opdoet voor uw reizen of hobby's, en direct helder antwoord krijgt op al uw vragen. Daarnaast optimaliseer ik uw active lifestyle door het naadloos instellen van smartwatches, fitnesstrackers en de synchronisatie met uw wagen.</p>
                     </div>
                     <div class="prijs-balk">
                         <span class="prijs-wrapper">Individueel: € 325</span> &bull; <span class="prijs-wrapper">Koppel: € 415</span>
@@ -1019,7 +989,6 @@
                 </div>
             </div>
 
-            <!-- Standby Service Box -->
             <div id="standby-service" class="abonnement-container">
                 <div class="abonnement-links">
                     <span class="abonnement-badge">Exclusieve nazorg</span>
@@ -1037,7 +1006,6 @@
         </div>
     </section>
 
-    <!-- Live Impact & Security Monitor Sectie (Gecorrigeerd naar realistische start-cijfers) -->
     <section class="tracker-sectie">
         <div class="container">
             <div class="tracker-header">
@@ -1115,7 +1083,6 @@
             <h2>Transparantie in tarieven</h2>
             
             <div class="tarieven-grid">
-                <!-- Tabel 1: Uurtarieven -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Uurtarieven en speciale diensten</h3>
@@ -1139,7 +1106,6 @@
                     </div>
                 </div>
 
-                <!-- Tabel 2: Verplaatsingen -->
                 <div class="tarieven-box">
                     <div>
                         <h3>Vaste verplaatsingskosten per rit</h3>
@@ -1204,7 +1170,7 @@
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3>Algemene Voorwaarden &amp; Aansprakelijkheid</h3>
             <p><strong>1. Flexibele Trajectuitvoering</strong><br>Alle trajecten worden in overleg gepland en afgestemd op de agenda van de cliënt, met het oog op een vlotte en gerichte voltooiing binnen de vooropgestelde termijn.</p>
-            <p><strong>2. Annulaties &amp; No-Show Forfaits</strong><br>Kosteloos annuleren kan tot 24 uur voor de geplande afspraak. Annulaties binnen 24 uur voor aanvang resulteren in een administratieve forfaitaire vergoeding van € 45,00 excl. btw. Bij een No-Show zonder verwittiging wordt 100% van de geplande sessie plus de verplaatsingskost van de desbetreffende zone gefactureerd.</p>
+            <p><strong>2. Annulaties &amp; No-Show Forfaits</strong><br>Kosteloos annuleren kan till 24 uur voor de geplande afspraak. Annulaties binnen 24 uur voor aanvang resulteren in een administratieve forfaitaire vergoeding van € 45,00 excl. btw. Bij een No-Show zonder verwittiging wordt 100% van de geplande sessie plus de verplaatsingskost van de desbetreffende zone gefactureerd.</p>
             <p><strong>3. Absolute Privacy (NDA) &amp; Aansprakelijkheidsuitsluiting</strong><br>De consultant is gebonden aan een automatische NDA en absolute discretie. Misbruik van gegevens is wettelijk strafbaar. Roy B. Coaching treedt uitsluitend op als begeleider; transacties worden nooit zelfstandig door de consultant uitgevoerd. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
         </div>
     </div>
@@ -1246,7 +1212,8 @@
             const startTellen = (getalElement) => {
                 const doel = +getalElement.getAttribute("data-target");
                 const huidigeWaarde = +getalElement.textContent;
-                const stapgrootte = Math.max(dovel / 40, 1); 
+                // FIX: dovel gecorrigeerd naar doel
+                const stapgrootte = Math.max(doel / 40, 1); 
 
                 if (huidigeWaarde < doel) {
                     getalElement.textContent = Math.ceil(huidigeWaarde + stapgrootte);
