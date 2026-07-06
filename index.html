@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_code = """<!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -1064,7 +1064,6 @@
             <h2>Tarieven &amp; modules</h2>
             <p class="sectie-ondertitel">Transparante basismodules voor gerichte digitale ondersteuning</p>
             
-            <!-- Algemene Hulp Box verplaatst naar het begin van de prijssectie -->
             <div class="basis-hulp-box">
                 <h4>Standaard inbegrepen bij elk coachingtraject:</h4>
                 <ul class="basis-hulp-grid">
@@ -1079,7 +1078,6 @@
                 </ul>
             </div>
 
-            <!-- Basistarieven Modules strak op 1 lijn uitgelijnd -->
             <div class="tarieven-grid">
                 <div class="pakket-kaart">
                     <div>
@@ -1127,7 +1125,6 @@
                 </div>
             </div>
 
-            <!-- Goudgerande Permanente Gemoedsrust box met opvallend promo logo element -->
             <div id="standby-service" class="abonnement-container">
                 <div class="abonnement-links">
                     <span class="promo-banner-badge"><i class="fas fa-tags"></i> ％ Lanceringsactie · 10% Beloningskorting</span>
@@ -1215,7 +1212,6 @@
                 </div>
             </div>
 
-            <!-- Vaste verplaatsingskosten per rit herontworpen als strakke chique tabel -->
             <div class="verplaatsing-container">
                 <h3>Vaste verplaatsingskosten per rit</h3>
                 <table class="strakke-tabel">
@@ -1337,7 +1333,6 @@
         </div>
     </section>
 
-    <!-- Algemene voorwaarden stijlvol herontworpen als chique sectie net boven de footer -->
     <section class="elegant-legal-box">
         <div class="container legal-flex">
             <p class="legal-clausule">
@@ -1424,4 +1419,10 @@
         });
     </script>
 </body>
-</html>
+</html>"""
+
+file_path = "live_free_by_roy_b_v2.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_code)
+
+print(f"File successfully created: {file_path}")
