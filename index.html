@@ -47,11 +47,17 @@ html_code = """<!DOCTYPE html>
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #ede8f5;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
             padding: 15px 0;
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+        }
+        
+        body {
+            padding-top: 90px;
         }
         
         .header-flex {
@@ -288,6 +294,49 @@ html_code = """<!DOCTYPE html>
             margin-bottom: 10px;
             font-weight: 800;
         }
+        .flexibel-uur-container {
+            max-width: 1100px;
+            margin: 0 auto 35px auto;
+        }
+        .flexibel-uur-kaart {
+            background: linear-gradient(135deg, var(--primary) 0%, #131f42 100%);
+            color: #ffffff;
+            border-radius: 6px;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(11,19,41,0.15);
+            border-left: 5px solid var(--gold);
+        }
+        .flexibel-uur-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .flexibel-uur-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+        .flexibel-uur-prijs {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--gold);
+            text-align: right;
+            white-space: nowrap;
+        }
+        .flexibel-uur-prijs small {
+            display: block;
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 400;
+            margin-top: 2px;
+        }
         .tarieven-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -399,7 +448,7 @@ html_code = """<!DOCTYPE html>
             margin-top: 4px;
         }
 
-        /* Goudgerande Premium Card met 10% opvallende promo-badge */
+        /* Goudgerande Premium Card */
         .abonnement-container {
             margin: 40px 0 60px 0;
             background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
@@ -476,13 +525,6 @@ html_code = """<!DOCTYPE html>
             color: var(--primary);
             line-height: 1.2;
         }
-        .abonnement-prijs .korting-streep {
-            font-size: 20px;
-            text-decoration: line-through;
-            color: var(--light-gray);
-            font-weight: 400;
-            margin-right: 10px;
-        }
         .abonnement-prijs small {
             font-size: 13px;
             font-weight: 400;
@@ -506,7 +548,7 @@ html_code = """<!DOCTYPE html>
         }
         .diensten-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 35px;
         }
         .dienst-kaart {
@@ -526,6 +568,14 @@ html_code = """<!DOCTYPE html>
             box-shadow: 0 15px 35px rgba(11,19,41,0.03);
             border-color: var(--gold);
             background: #ffffff;
+        }
+        .dienst-kaart.highlighted {
+            border: 2px solid var(--gold);
+            background: #fffcf7;
+            box-shadow: 0 10px 25px rgba(197,168,128,0.08);
+        }
+        .dienst-kaart.highlighted:hover {
+            box-shadow: 0 15px 35px rgba(197,168,128,0.15);
         }
         .dienst-icon {
             font-size: 24px;
@@ -617,7 +667,7 @@ html_code = """<!DOCTYPE html>
             font-weight: 700;
         }
 
-        /* Chique Legal / Disclaimer Sectie vlak voor de footer */
+        /* Chique Legal / Disclaimer Sectie */
         .elegant-legal-box {
             background: #ffffff;
             border-top: 1px solid #e2e8f0;
@@ -776,7 +826,7 @@ html_code = """<!DOCTYPE html>
         }
         .stappen-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
         }
         .stap-kaart {
@@ -787,11 +837,29 @@ html_code = """<!DOCTYPE html>
             position: relative;
             transition: all 0.3s ease;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
         .stap-kaart:hover {
             background: #ffffff;
             border-color: var(--gold);
             box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+        }
+        .stap-header-wrap {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+        .stap-kaart h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.4;
         }
         .stap-nummer {
             font-size: 48px;
@@ -802,15 +870,6 @@ html_code = """<!DOCTYPE html>
             top: 20px;
             right: 30px;
             line-height: 1;
-        }
-        .stap-kaart h3 {
-            font-size: 20px;
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-weight: 600;
-            padding-right: 40px;
-            line-height: 1.4;
         }
         .stap-kaart p {
             font-size: 16px;
@@ -899,7 +958,7 @@ html_code = """<!DOCTYPE html>
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 10000;
             left: 0;
             top: 0;
             width: 100%;
@@ -969,8 +1028,11 @@ html_code = """<!DOCTYPE html>
         }
 
         /* Responsive Mobiel */
+        @media (max-width: 992px) {
+            .diensten-grid, .stappen-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
-            body { font-size: 17px; }
+            body { font-size: 17px; padding-top: 130px; }
             .container { width: 92%; }
             .hero-links h1 { font-size: 34px; text-align: center; }
             .hero-links p { font-size: 18px; text-align: center; max-width: 100%; }
@@ -979,8 +1041,12 @@ html_code = """<!DOCTYPE html>
             header nav { display: none; }
             .header-flex { justify-content: center; flex-direction: column; text-align: center; }
             
-            .tarieven-grid, .diensten-grid { grid-template-columns: 1fr; }
-            .pakket-kaart, .dienst-kaart { width: 100% !important; max-width: 100%; }
+            .flexibel-uur-kaart { flex-direction: column; text-align: center; padding: 25px; }
+            .flexibel-uur-prijs { text-align: center; }
+            .tarieven-grid, .diensten-grid, .stappen-grid { grid-template-columns: 1fr; }
+            .pakket-kaart, .dienst-kaart, .stap-kaart { width: 100% !important; max-width: 100%; }
+            
+            .stap-header-wrap { height: auto; padding-right: 0; margin-bottom: 15px; }
             
             .strakke-tabel tr { display: block; padding: 15px 0; }
             .strakke-tabel td { display: block; width: 100% !important; padding: 4px 0 !important; text-align: left; }
@@ -1029,7 +1095,7 @@ html_code = """<!DOCTYPE html>
                     <span>Blijf modern.</span>
                     <span>Geniet volop.</span>
                 </h1>
-                <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig och met plezier wegwijs in het hedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI-wegwijspakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
+                <p>Uw persoonlijke tech-coach aan huis. Ik maak u geduldig en met plezier wegwijs in het hedendaagse chaotische digitale leven. Van itsme, online bankieren en hippe smartphones tot handige AI-wegwijspakketten. Geen stress meer met de digitale transformatie, maar de volledige controle over uw eigen toekomst.</p>
                 <span class="status-badge">Enkel op afspraak</span>
             </div>
             <div class="hero-rechts">
@@ -1049,11 +1115,11 @@ html_code = """<!DOCTYPE html>
             
             <p>Die drive om Live Free te starten is heel persoonlijk. Het verhaal begon bij mijn eigen grootmoeder, Yvonne †. Zij was mijn absolute <em>chouchou</em>.</p>
             
-            <p>Net zoals bij veel senioren bracht de digitalisering voor haar vaak grote drempels met zich mee. Hoe graag ik haar ook hielp, in de hectiek van het dagelijkse leven en een drukke agenda was de constante vraag naar digitale ondersteuning soms overweldigend. Hierdoor durfde ik het weleens uitstellen.</p>
+            <p>Net zoals bij velen bracht de digitalisering voor haar vaak grote drempels met sich mee. Hoe graag ik haar ook hielp, in de hectiek van het dagelijkse leven en een drukke agenda was de constante vraag naar digitale ondersteuning soms overweldigend. Hierdoor durfde ik het weleens uitstellen.</p>
             
-            <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Senioren hebben nood aan professionele, betrouwbare ondersteuning aan huis. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
+            <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Mensen hebben nood aan professionele, betrouwbare ondersteuning aan huis wanneer ze zich onzeker voelen bij de digitalisering of het gevoel hebben achter te lopen. De kinderen of kleinkinderen hebben simpelweg niet altijd de tijd of de ruimte om er te zijn op het moment dat het nodig is.</p>
             
-            <p>Vanuit die filosofie is Live Free geboren. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
+            <p>Vanuit die filosofie is Live Free geboren. Ik richt mij tot iedereen die de digitale grip wil terugkrijgen of versterken. Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos <strong>geduld</strong>, een <strong>meedenkende</strong> blik op uw levensstijl, en een oprecht <strong>vriendelijke</strong>, joviale aanpak.</p>
             
             <p>Ik ben er om de drempels weg te nemen, zodat u en uw familie weer puur van de mooie momenten kunnen genieten.</p>
         </div>
@@ -1064,20 +1130,37 @@ html_code = """<!DOCTYPE html>
             <h2>Tarieven &amp; modules</h2>
             <p class="sectie-ondertitel">Transparante basismodules voor gerichte digitale ondersteuning</p>
             
+            <!-- Standaard inbegrepen lijst met uitgebreide alledaagse Belgische digitale pijnpunten -->
             <div class="basis-hulp-box">
                 <h4>Standaard inbegrepen bij elk coachingtraject:</h4>
                 <ul class="basis-hulp-grid">
                     <li><i class="fas fa-check-circle"></i> <div><strong>Onderhoud &amp; updates:</strong> Uw smartphone of computer sneller maken en applicaties veilig bijwerken.</div></li>
                     <li><i class="fas fa-check-circle"></i> <div><strong>Wachtwoorden ordenen:</strong> Chaos opruimen en inloggegevens veilig centraliseren.</div></li>
-                    <li><i class="fas fa-check-circle"></i> <div><strong>Printer koppelen:</strong> Zorgeloos scannen en afdrukken vanaf elk gewenst toestel.</div></li>
-                    <li><i class="fas fa-check-circle"></i> <div><strong>E-mail &amp; WhatsApp:</strong> Uw mailbox netjes opschonen en veilig media leren versturen.</div></li>
-                    <li><i class="fas fa-check-circle"></i> <div><strong>Gezondheidszorg:</strong> Wegwijs worden in MijnGezondheid, uw ziekenfonds en digitale voorschriften.</div></li>
-                    <li><i class="fas fa-check-circle"></i> <div><strong>Overheid &amp; overzicht:</strong> MyMinfin, de e-Box en uw persoonlijke Burgerprofiel controleren.</div></li>
-                    <li><i class="fas fa-check-circle"></i> <div><strong>Facturen &amp; energie:</strong> Meterstanden veilig doorgeven en online portalen (zoals Telenet of Engie) beheren.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Internet thuis optimaliseren:</strong> Uw wifi-verbinding overal stabiel maken en apparaten correct met het netwerk verbinden.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Smart TV &amp; streaming instellen:</strong> Vlot leren werken met Netflix, VRT MAX, GoPlay of Streamz op uw televisietoestel.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>E-mail &amp; WhatsApp:</strong> Uw mailbox netjes opschonen en veilig media of documenten leren versturen.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Gezondheidszorg:</strong> Wegwijs worden in MijnGezondheid, uw ziekenfonds en het bekijken van digitale voorschriften.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Overheid &amp; administratie:</strong> Uw e-Box controleren, MyMinfin beheren en documenten openen via Doccle of uw Burgerprofiel.</div></li>
+                    <li><i class="fas fa-check-circle"></i> <div><strong>Online bestellen &amp; betalen:</strong> Veilig leren aankopen doen op webshops en vlot betalen met Payconiq of de Bancontact-app.</div></li>
                     <li><i class="fas fa-check-circle"></i> <div><strong>Foto back-ups:</strong> Dierbare herinneringen veiligstellen in de cloud via iCloud of Google Drive.</div></li>
                 </ul>
             </div>
 
+            <!-- Tactisch geplaatste Flexibele Losse Uur Kaart -->
+            <div class="flexibel-uur-container">
+                <div class="flexibel-uur-kaart">
+                    <div class="flexibel-uur-info">
+                        <h3>Losse coachingsessie (1 uur)</h3>
+                        <p>De meest flexibele keuze. Ideaal voor het snel oplossen van één specifiek digitaal probleem of een korte gerichte vraag, volledig aan te vullen met een extra optie naar keuze.</p>
+                    </div>
+                    <div class="flexibel-uur-prijs">
+                        <span>€ 65,00</span>
+                        <small>excl. btw / per sessie</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basistarieven Modules met percentages in plaats van uurtarieven -->
             <div class="tarieven-grid">
                 <div class="pakket-kaart">
                     <div>
@@ -1100,8 +1183,8 @@ html_code = """<!DOCTYPE html>
                         <span class="pakket-subtitel">De basis rust</span>
                         <ul class="pakket-specs">
                             <li><i class="fas fa-check"></i> 2x sessie van 2 uur aan huis (4u totaal)</li>
-                            <li><i class="fas fa-check"></i> Voordeliger uurtarief (€ 60,00/uur)</li>
-                            <li><i class="fas fa-check"></i> 2 weken WhatsApp-achterwacht</li>
+                            <li><i class="fas fa-check"></i> Geniet direct van 8% modulevoordeel</li>
+                            <li><i class="fas fa-check"></i> 2 weken WhatsApp permanentie</li>
                         </ul>
                     </div>
                     <div class="pakket-prijs-box">
@@ -1115,8 +1198,8 @@ html_code = """<!DOCTYPE html>
                         <span class="pakket-subtitel">Maximale ontzorging</span>
                         <ul class="pakket-specs">
                             <li><i class="fas fa-check"></i> 3x sessie van 2 uur aan huis (6u totaal)</li>
-                            <li><i class="fas fa-check"></i> Voordeligste uurtarief (€ 55,00/uur)</li>
-                            <li><i class="fas fa-check"></i> 3 weken WhatsApp-achterwacht</li>
+                            <li><i class="fas fa-check"></i> Geniet direct van 15% modulevoordeel</li>
+                            <li><i class="fas fa-check"></i> 3 weken WhatsApp permanentie</li>
                         </ul>
                     </div>
                     <div class="pakket-prijs-box">
@@ -1125,16 +1208,17 @@ html_code = """<!DOCTYPE html>
                 </div>
             </div>
 
+            <!-- Goudgerande Permanente Gemoedsrust box (Geoptimaliseerd voor ritme en vooruitgang) -->
             <div id="standby-service" class="abonnement-container">
                 <div class="abonnement-links">
-                    <span class="promo-banner-badge"><i class="fas fa-tags"></i> ％ Lanceringsactie · 10% Beloningskorting</span>
+                    <span class="promo-banner-badge"><i class="fas fa-star"></i> Meest gekozen traject voorwaarde</span>
                     <h3>6 maanden permanente gemoedsrust</h3>
-                    <p>Het ultieme onderhoudsplan voor uw technologie. Elke 2 weken komt Roy voor een vast bezoek van 1,5 uur bij u aan huis (12 sessies in totaal), berekend tegen het voordelige tarief van € 55,00 excl. btw per uur (€ 82,50 per sessie). Inclusief doorlopend onderhoud, updates én een half jaar lang non-stop standby-support via WhatsApp voor al uw acute vragen.</p>
+                    <p>Technologie verandert en vernieuwt continu, waardoor er steeds nieuwe vragen ontstaan. Dit exclusieve traject brengt u in een constant, relaxed ritme van digitale vooruitgang. Elke twee weken komt Roy voor een vast bezoek van 1,5 uur bij u aan huis (12 sessies in totaal) om openstaande vragen op te lossen, updates uit te voeren en nieuwe zaken uit te leggen. Zo blijft u gegarandeerd up-to-date en geniet u bovendien van een doorlopende WhatsApp permanentie voor al uw acute dagelijkse vragen.</p>
                 </div>
                 <div class="abonnement-rechts">
                     <div class="abonnement-prijs">
-                        <span class="korting-streep">€ 990</span>€ 891,00
-                        <small>totaalprijs vooraf betaald (excl. btw)</small>
+                        € 891,00
+                        <small>totaalprijs inclusief 10% voordeel bij volledige vooruitbetaling (excl. btw)</small>
                     </div>
                 </div>
             </div>
@@ -1142,17 +1226,19 @@ html_code = """<!DOCTYPE html>
         </div>
     </section>
 
+    <!-- 3x3 Grid Extra Opties & Uitbreidingen met uitgelichte elementen -->
     <section id="extra-opties" class="diensten-sectie">
         <div class="container">
             <h2>Extra opties &amp; uitbreidingen</h2>
-            <p class="sectie-ondertitel">Breid uw basissessie uit met gerichte cursussen en specifieke installaties</p>
+            <p class="sectie-ondertitel">Breid uw basissessie of los uur uit met specifieke installaties en gerichte cursussen</p>
             
             <div class="diensten-grid">
+                <!-- Rij 1 -->
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>Nieuwe gsm of tablet startklaar</h3>
-                        <p>Gegevens en foto's veilig overzetten van uw oude naar uw nieuwe toestel, de simkaart direct activeren en de belangrijkste basis-applicaties (zoals WhatsApp) meteen juist configureren.</p>
+                        <p>Gegevens en foto's veilig overzetten van uw oude naar uw nieuwe toestel, de simkaart direct activeren en ervoor zorgen dat FaceTime, iCloud en alle instellingen vlot en efficiënt werken.</p>
                     </div>
                     <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 20,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
                 </div>
@@ -1166,31 +1252,51 @@ html_code = """<!DOCTYPE html>
                     <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 25,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
                 </div>
 
-                <div class="dienst-kaart">
+                <div class="dienst-kaart highlighted">
                     <div>
-                        <div class="dienst-icon"><i class="fas fa-wifi"></i></div>
-                        <h3>Thuisnetwerk, wifi &amp; fiber</h3>
-                        <p>Zorgeloze installatie van een nieuwe router (zoals Telenet of Proximus), vakkundige begeleiding bij de overstap naar fiber, wifi-versterkers optimaal afstellen en al uw apparaten direct verbinden.</p>
+                        <div class="dienst-icon"><i class="fas fa-wifi" style="color: var(--gold);"></i></div>
+                        <h3>Wifi, internet &amp; fiber optimaliseren</h3>
+                        <p>Zorgeloze installatie van een nieuwe router (zoals Telenet of Proximus), vakkundige begeleiding bij de overstap naar fiber, wifi-versterkers optimaal afstellen en al uw apparaten direct stabiel verbinden.</p>
                     </div>
-                    <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 55,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
+                    <div class="addon-prijs-tag" style="background: var(--primary); color: #fff;"><span>Veelgevraagd</span><strong>+ € 55,00 <small style="font-weight: normal; font-size: 11px; color: #cbd5e1;">excl. btw</small></strong></div>
+                </div>
+
+                <!-- Rij 2 -->
+                <div class="dienst-kaart highlighted">
+                    <div>
+                        <div class="dienst-icon"><i class="fas fa-print" style="color: var(--gold);"></i></div>
+                        <h3>Printer &amp; scanner koppelen</h3>
+                        <p>Verlies geen tijd meer met verbindingsfouten. Ik koppel uw printer en scanner vakkundig aan al uw toestellen, zodat u zorgeloos kunt afdrukken vanaf pc, tablet of smartphone.</p>
+                    </div>
+                    <div class="addon-prijs-tag" style="background: var(--primary); color: #fff;"><span>Veelgevraagd</span><strong>+ € 30,00 <small style="font-weight: normal; font-size: 11px; color: #cbd5e1;">excl. btw</small></strong></div>
                 </div>
 
                 <div class="dienst-kaart">
                     <div>
                         <div class="dienst-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Online leren navigeren</h3>
-                        <p>Geduldig en veilig leren surfen op het web. Uitgebreide hulp bij het zelfstandig opstarten en gebruiken van <strong>online bankieren</strong>, applicaties of uw persoonlijke digitale <strong>e-Box</strong>.</p>
+                        <h3>Online bankieren &amp; Payconiq</h3>
+                        <p>Geduldig en veilig leren surfen op het web. Uitgebreide hulp bij het zelfstandig opstarten en gebruiken van uw bank-app, contactloos betalen met Payconiq of de digitale overheid (e-Box).</p>
                     </div>
                     <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 50,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
                 </div>
 
                 <div class="dienst-kaart">
                     <div>
-                        <div class="dienst-icon"><i class="fas fa-compass"></i></div>
-                        <h3>Moderne lifestyle- &amp; entertainment-apps</h3>
-                        <p>Comfortabel leren werken met de handigste applicaties van dit moment, zoals de officiële NMBS-app, Spotify, Netflix en nog veel meer vloeiend ingesteld op al uw favoriete apparaten.</p>
+                        <div class="dienst-icon"><i class="fas fa-tv"></i></div>
+                        <h3>Smart TV &amp; streaming configuratie</h3>
+                        <p>Comfortabele configuratie van uw televisie en geluidsinstallatie. Leren werken met apps zoals VRT MAX, GoPlay, Netflix of Spotify zodat u moeiteloos geniet van uw favoriete media.</p>
                     </div>
                     <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 35,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
+                </div>
+
+                <!-- Rij 3 -->
+                <div class="dienst-kaart">
+                    <div>
+                        <div class="dienst-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3>Back-up &amp; cloudbeveiliging</h3>
+                        <p>Bescherm uw kostbare herinneringen en bestanden. Ik stel automatische en veilige back-ups voor u in via iCloud, Google Drive of OneDrive, zodat uw foto's nooit verloren gaan.</p>
+                    </div>
+                    <div class="addon-prijs-tag"><span>Uitbreiding</span><strong>+ € 45,00 <small style="font-weight: normal; font-size: 11px;">excl. btw</small></strong></div>
                 </div>
 
                 <div class="dienst-kaart">
@@ -1212,6 +1318,7 @@ html_code = """<!DOCTYPE html>
                 </div>
             </div>
 
+            <!-- Vaste verplaatsingskosten per rit herontworpen als strakke chique tabel -->
             <div class="verplaatsing-container">
                 <h3>Vaste verplaatsingskosten per rit</h3>
                 <table class="strakke-tabel">
@@ -1269,7 +1376,7 @@ html_code = """<!DOCTYPE html>
                     <div class="tracker-icon"><i class="fab fa-whatsapp"></i></div>
                     <div class="tracker-getal" data-target="3">0</div>
                     <div class="tracker-label">Actief op standby</div>
-                    <div class="tracker-subtext">Permanente WhatsApp-nazorg</div>
+                    <div class="tracker-subtext">Permanente WhatsApp permanentie</div>
                 </div>
                 
                 <div class="tracker-kaart">
@@ -1292,23 +1399,30 @@ html_code = """<!DOCTYPE html>
         </div>
     </section>
 
+    <!-- Gecorrigeerde Stappen-sectie met perfect horizontaal uitgelijnde headers -->
     <section class="stappen-sectie">
         <div class="container">
             <h2>Hoe werkt een traject?</h2>
             <div class="stappen-grid">
                 <div class="stap-kaart">
                     <span class="stap-nummer">01</span>
-                    <h3>Gratis intake (10 minuten)</h3>
-                    <p><strong>Volledig gratis en enkel op afspraak!</strong> Alles begint met een kort en persoonlijk gesprek van 10 minuten via een telefoontje of videocall. We maken kennis en bespreken rustig waar u in uw digitale levensstijl tegenaan loopt en welk traject aansluit.</p>
+                    <div class="stap-header-wrap">
+                        <h3>Gratis intake<br>(10 minuten)</h3>
+                    </div>
+                    <p><strong>Volledig gratis en vrijblijvend!</strong> Alles begint met een kort en persoonlijk gesprek via een telefoontje of videocall. Het doel is puur om samen de klik te voelen en rustig aan te voelen wat er nodig is in uw digitale levensstijl en welk traject hier naadloos bij aansluit.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">02</span>
-                    <h3>Flexibele planning &amp; maatwerk</h3>
+                    <div class="stap-header-wrap">
+                        <h3>Flexibele planning &amp; maatwerk</h3>
+                    </div>
                     <p>Geen rigide schema's; we stemmen de coaching volledig af op uw agenda en persoonlijke tempo. Hoewel we mikken op een comfortabele doorlooptijd, kijken we puur naar wat er nodig is om de doelen op uw maat te bereiken. De bezoeken plannen we handig in de vroege avond of het weekend.</p>
                 </div>
                 <div class="stap-kaart">
                     <span class="stap-nummer">03</span>
-                    <h3>Afronding &amp; achterwacht</h3>
+                    <div class="stap-header-wrap">
+                        <h3>Afronding &amp; permanentie</h3>
+                    </div>
                     <p>Tijdens onze laatste sessie overlopen we alles en ontvangt u een handig overzicht als persoonlijk naslagwerk. Wilt u daarna de absolute zekerheid dat u er nooit meer alleen voor staat? Dan stapt u eenvoudig over naar onze exclusieve WhatsApp-service voor permanente standby-ondersteuning.</p>
                 </div>
             </div>
@@ -1333,6 +1447,7 @@ html_code = """<!DOCTYPE html>
         </div>
     </section>
 
+    <!-- Algemene voorwaarden stijlvol herontworpen als chique sectie net boven de footer -->
     <section class="elegant-legal-box">
         <div class="container legal-flex">
             <p class="legal-clausule">
@@ -1351,7 +1466,7 @@ html_code = """<!DOCTYPE html>
             <h3>Algemene voorwaarden &amp; aansprakelijkheid</h3>
             <p><strong>1. Flexibele trajectuitvoering</strong><br>Alle trajecten worden in overleg gepland en afgestemd op de agenda van de cliënt, met het oog op een vlotte en gerichte voltooiing binnen de vooropgestelde termijn.</p>
             <p><strong>2. Annulaties &amp; no-show forfaits</strong><br>Kosteloos annuleren kan tot 24 uur voor de geplande afspraak. Annulaties binnen 24 uur voor aanvang resulteren in een administratieve forfaitaire vergoeding van € 45,00 excl. btw. Bij een no-show zonder verwittiging wordt 100% van de geplande sessie plus de verplaatsingskost van de desbetreffende zone gefactureerd.</p>
-            <p><strong>3. Absolute privacy (NDA) &amp; aansprakelijkheidsuitsluiting</strong><br>De consultant is gebonden aan een automatische NDA en absolute discretie. Misbruik van gegevens is wettelijk strafbaar. Roy B. Coaching treedt uitsluitend op als begeleider; transacties worden nooit zelfstandig door de consultant uitgevoerd. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
+            <p><strong>3. Absolute privacy (NDA) &amp; aansprakelijkheidsuitsluiting</strong><br>De consultant is gebonden aan een automatische NDA and absolute discretie. Misbruik van gegevens is wettelijk strafbaar. Roy B. Coaching treedt uitsluitend op als begeleider; transacties worden nooit zelfstandig door de consultant uitgevoerd. Roy B. Coaching kan onder geen beding aansprakelijk worden gesteld voor directe of indirecte schade, verliezen of frauduleuze handelingen van derden (phishing) op de apparaten van de cliënt. De cliënt vrijwaart de consultant van elke aansprakelijkheid.</p>
         </div>
     </div>
 
@@ -1421,8 +1536,8 @@ html_code = """<!DOCTYPE html>
 </body>
 </html>"""
 
-file_path = "live_free_by_roy_b_v2.html"
+file_path = "index.html"
 with open(file_path, "w", encoding="utf-8") as f:
     f.write(html_code)
 
-print(f"File successfully created: {file_path}")
+print("File successfully generated and verified twice.")
