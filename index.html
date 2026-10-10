@@ -147,17 +147,17 @@
             color: var(--primary);
         }
 
-        /* 2, 3 & 4. Hero */
+        /* Hero */
         .hero {
             background-color: var(--primary);
             color: var(--white);
-            padding: 80px 0 75px 0;
+            padding: 85px 0 75px 0;
             text-align: center;
             border-bottom: 3px solid var(--gold);
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 800;
             line-height: 1.25;
             margin-bottom: 24px;
@@ -169,19 +169,35 @@
             display: block;
         }
 
+        .hero h1 .line-on .highlight-gold {
+            color: var(--gold-bright);
+        }
+
         .hero h1 .line-off {
             color: var(--gold-bright);
             display: block;
-            font-size: 34px;
             margin-top: 6px;
         }
 
-        .hero p {
-            font-size: 19px;
+        .hero h1 .line-off .highlight-white {
+            color: var(--white);
+        }
+
+        .hero-desc {
+            font-size: 18px;
             color: #cbd5e1;
             max-width: 740px;
-            margin: 0 auto 35px auto;
+            margin: 0 auto 12px auto;
             font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-target {
+            font-size: 18px;
+            color: #f1f5f9;
+            max-width: 740px;
+            margin: 0 auto 35px auto;
+            font-weight: 400;
             line-height: 1.8;
         }
 
@@ -190,13 +206,14 @@
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .cta-main {
             text-decoration: none;
-            padding: 15px 28px;
+            padding: 15px 36px;
             border-radius: 4px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
@@ -227,6 +244,17 @@
             transform: translateY(-2px);
         }
 
+        .hero-subnote {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13px;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
         /* Secties algemeen */
         section {
             padding: 80px 0;
@@ -245,7 +273,7 @@
             text-transform: none;
         }
 
-        /* 6 & 7. Wie is Roy met foto */
+        /* Wie is Roy */
         .roy-flex {
             display: flex;
             align-items: flex-start;
@@ -294,7 +322,7 @@
             line-height: 1.8;
         }
 
-        /* 8. Werkwijze */
+        /* Werkwijze */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -347,7 +375,7 @@
             line-height: 1.75;
         }
 
-        /* 9, 10, 11. Pricing met schakelaar */
+        /* Pricing */
         .pricing-section {
             background-color: var(--bg-light);
             border-top: 1px solid #e2e8f0;
@@ -533,7 +561,7 @@
             font-weight: 800;
         }
 
-        /* 12 & 13. Contact */
+        /* Contact */
         .contact-section {
             background-color: var(--primary);
             color: var(--white);
@@ -544,15 +572,19 @@
         .contact-section h2 {
             font-size: 34px;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .contact-section p {
+        .contact-lead {
             color: #cbd5e1;
             font-size: 18px;
             max-width: 600px;
             margin: 0 auto 35px auto;
-            line-height: 1.7;
+            line-height: 1.8;
+        }
+
+        .contact-lead span {
+            display: block;
         }
 
         .contact-buttons {
@@ -594,7 +626,7 @@
             transform: translateY(-2px);
         }
 
-        /* 14. Footer */
+        /* Footer */
         footer {
             background-color: #060b18;
             color: #94a3b8;
@@ -613,9 +645,8 @@
         @media (max-width: 768px) {
             body { font-size: 16px; padding-top: 70px; }
             .hero { padding: 55px 0; }
-            .hero h1 { font-size: 32px; }
-            .hero h1 .line-off { font-size: 26px; }
-            .hero p { font-size: 17px; }
+            .hero h1 { font-size: 34px; }
+            .hero-desc, .hero-target { font-size: 16px; }
             .gold-title { font-size: 28px; }
             
             .roy-flex { flex-direction: column; align-items: center; text-align: left; padding: 25px 20px; gap: 25px; }
@@ -636,7 +667,7 @@
 </head>
 <body>
 
-    <!-- 1. Vaste header met icon-only acties -->
+    <!-- Vaste header met icon-only acties -->
     <header>
         <div class="container header-flex">
             <a href="#" class="logo-wrap">
@@ -657,22 +688,29 @@
         </div>
     </header>
 
-    <!-- 2, 3 & 4. Hero met kortere titels & 10 min gratis babbel -->
+    <!-- Hero met AAN/UIT contrast en doelgroepomschrijving -->
     <section class="hero">
         <div class="container">
             <h1>
-                <span class="line-on">Digitale vrijheid aan.</span>
-                <span class="line-off">Digitale stress uit.</span>
+                <span class="line-on">Vrijheid <span class="highlight-gold">AAN</span></span>
+                <span class="line-off"><span class="highlight-gold">Stress</span> <span class="highlight-white">UIT</span></span>
             </h1>
-            <p>Last van de snelheid van de digitale vooruitgang, of voelt u zich onzeker met uw smartphone, computer of op het internet? Ik zorg samen met u voor digitale rust, overzicht en zelfstandigheid.</p>
+            <p class="hero-desc">Last van de snelheid van de digitale vooruitgang, of voelt u zich onzeker met uw smartphone, computer of op het internet?</p>
+            <p class="hero-target">Voor alle leeftijden die zich ongemakkelijk of voorbijgestoken voelen door de digitale snelheid. Ik zorg samen met u voor digitale rust.</p>
+            
             <div class="hero-cta-group">
-                <a href="tel:+32487529489" class="cta-main cta-call"><i class="fas fa-phone-alt"></i> Bellen (10 min gratis babbel)</a>
-                <a href="https://wa.me/32487529489" class="cta-main cta-wa"><i class="fab fa-whatsapp"></i> WhatsApp (10 min gratis babbel)</a>
+                <a href="tel:+32487529489" class="cta-main cta-call"><i class="fas fa-phone-alt"></i> Bellen</a>
+                <a href="https://wa.me/32487529489" class="cta-main cta-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            
+            <div class="hero-subnote">
+                <span>Gratis 10 minuten kennismaking</span>
+                <span>We toetsen samen uw noden af</span>
             </div>
         </div>
     </section>
 
-    <!-- 6 & 7. Wie is Roy (in goud) met foto en gecorrigeerde quote -->
+    <!-- Wie is Roy (in goud) met foto en quote -->
     <section id="wie-is-roy">
         <div class="container">
             <div class="section-header">
@@ -692,7 +730,7 @@
         </div>
     </section>
 
-    <!-- 8. Werkwijze (in goud) -->
+    <!-- Werkwijze (in goud) -->
     <section id="werkwijze" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-header">
@@ -718,7 +756,7 @@
         </div>
     </section>
 
-    <!-- 9, 10, 11. Tarief met schakelaar -->
+    <!-- Tarief met schakelaar -->
     <section id="tarief" class="pricing-section">
         <div class="container">
             <div class="section-header">
@@ -782,11 +820,14 @@
         </div>
     </section>
 
-    <!-- 12 & 13. Contact & Afspraak maken -->
+    <!-- Contact & Afspraak maken -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Klaar voor?</h2>
-            <p>Neem vandaag nog contact op voor een kennismaking. We plannen het beste moment in dat u past.</p>
+            <p class="contact-lead">
+                <span>Neem vandaag nog contact op voor een kennismaking.</span>
+                <span>We plannen het beste moment in dat u past.</span>
+            </p>
             <div class="contact-buttons">
                 <a href="tel:+32487529489" class="contact-card-btn btn-call-big">
                     <i class="fas fa-phone-alt"></i> Bellen
@@ -798,7 +839,7 @@
         </div>
     </section>
 
-    <!-- 14. Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p><strong>Digital Liberty by Roy B.</strong> &bull; Digitale ondersteuning aan huis</p>
