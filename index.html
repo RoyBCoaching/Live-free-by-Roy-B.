@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Digital Liberty by Roy B. | Uw persoonlijke tech-coach aan huis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Digital Liberty by Roy B. | Digitale ondersteuning aan huis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0b1329;       /* Diep marineblauw */
-            --primary-light: #131f42; /* Lichter marineblauw */
-            --gold: #c5a880;          /* Warm champagne goud */
-            --gold-bright: #dfbe8f;   /* Helder goud */
-            --gold-soft: #f4f0ea;     /* Zacht goudwit */
+            --primary: #0b1329;
+            --primary-light: #131f42;
+            --gold: #c5a880;
+            --gold-bright: #dfbe8f;
+            --gold-soft: #f4f0ea;
             --text-dark: #1e293b;
             --text-muted: #64748b;
             --bg-light: #f8fafc;
@@ -40,6 +40,7 @@
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             width: 100%;
+            padding-top: 75px;
         }
 
         .container {
@@ -49,35 +50,37 @@
             padding: 0 15px;
         }
 
-        /* --- Header --- */
+        /* 1. Vaste header met icon-only knoppen */
         header {
-            background: rgba(11, 19, 41, 0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.25);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 19, 41, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.25);
             z-index: 1000;
-            padding: 16px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
         }
 
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             text-decoration: none;
         }
 
         .logo-svg {
-            width: 44px;
-            height: 44px;
+            width: 38px;
+            height: 38px;
             flex-shrink: 0;
         }
 
@@ -88,7 +91,7 @@
 
         .logo-title {
             color: var(--white);
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -101,7 +104,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         .header-actions {
@@ -110,82 +113,73 @@
             align-items: center;
         }
 
-        .btn-header {
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        .icon-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.25s ease;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
-        .btn-header-wa {
+        .icon-btn-wa {
             background-color: var(--green);
             color: var(--white);
         }
 
-        .btn-header-wa:hover {
+        .icon-btn-wa:hover {
+            transform: scale(1.08);
             background-color: #20ba5a;
-            transform: translateY(-2px);
         }
 
-        .btn-header-call {
+        .icon-btn-call {
             background-color: transparent;
             color: var(--gold-bright);
-            border: 1px solid var(--gold-bright);
+            border: 1.5px solid var(--gold-bright);
         }
 
-        .btn-header-call:hover {
+        .icon-btn-call:hover {
+            transform: scale(1.08);
             background-color: var(--gold-bright);
             color: var(--primary);
-            transform: translateY(-2px);
         }
 
-        /* --- Hero Sectie --- */
+        /* 2, 3 & 4. Hero */
         .hero {
             background-color: var(--primary);
             color: var(--white);
-            padding: 90px 0 80px 0;
+            padding: 80px 0 75px 0;
             text-align: center;
             border-bottom: 3px solid var(--gold);
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(197, 168, 128, 0.12);
-            border: 1px solid var(--gold);
-            color: var(--gold-bright);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: 44px;
+            font-size: 42px;
             font-weight: 800;
             line-height: 1.25;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
             letter-spacing: -0.5px;
         }
 
-        .hero h1 span {
+        .hero h1 .line-on {
+            color: var(--white);
+            display: block;
+        }
+
+        .hero h1 .line-off {
             color: var(--gold-bright);
             display: block;
+            font-size: 34px;
+            margin-top: 6px;
         }
 
         .hero p {
             font-size: 19px;
             color: #cbd5e1;
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto 35px auto;
             font-weight: 300;
             line-height: 1.8;
@@ -200,7 +194,7 @@
 
         .cta-main {
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 15px 28px;
             border-radius: 4px;
             font-size: 15px;
             font-weight: 700;
@@ -233,9 +227,9 @@
             transform: translateY(-2px);
         }
 
-        /* --- Algemene Secties --- */
+        /* Secties algemeen */
         section {
-            padding: 85px 0;
+            padding: 80px 0;
         }
 
         .section-header {
@@ -243,53 +237,64 @@
             margin-bottom: 45px;
         }
 
-        .section-tag {
+        .gold-title {
             color: var(--gold);
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            color: var(--primary);
             font-size: 34px;
             font-weight: 800;
             letter-spacing: -0.5px;
+            text-transform: none;
         }
 
-        /* --- 1. Wie is Roy --- */
-        .story-box {
+        /* 6 & 7. Wie is Roy met foto */
+        .roy-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 45px;
             background: var(--bg-light);
             border-left: 4px solid var(--gold);
             padding: 40px;
             border-radius: 6px;
-            font-size: 17px;
-            line-height: 1.9;
+        }
+
+        .roy-foto-kader {
+            flex: 0 0 240px;
+            position: relative;
+        }
+
+        .roy-foto-kader img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 10px 25px rgba(11, 19, 41, 0.12);
+            border: 2px solid var(--gold);
+            display: block;
+        }
+
+        .roy-tekst-inhoud {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.85;
             color: #334155;
         }
 
-        .story-box p {
-            margin-bottom: 20px;
+        .roy-tekst-inhoud p {
+            margin-bottom: 18px;
         }
 
-        .story-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .quote-highlight {
-            font-size: 19px;
+        .roy-quote {
+            font-size: 17px;
             font-style: italic;
             color: var(--primary);
             font-weight: 600;
             border-top: 1px solid #e2e8f0;
-            padding-top: 20px;
-            margin-top: 25px;
+            padding-top: 18px;
+            margin-top: 20px;
+            line-height: 1.8;
         }
 
-        /* --- 2. Wat Mag Je Verwachten --- */
+        /* 8. Werkwijze */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -301,7 +306,9 @@
             border: 1px solid #e2e8f0;
             border-radius: 6px;
             padding: 35px 25px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
@@ -311,16 +318,16 @@
             border-color: var(--gold);
         }
 
-        .step-number {
-            display: inline-flex;
-            width: 48px;
-            height: 48px;
+        .step-badge {
+            width: 44px;
+            height: 44px;
             background: var(--gold-soft);
             color: var(--primary);
             border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             margin-bottom: 20px;
             border: 1px solid rgba(197, 168, 128, 0.4);
@@ -330,16 +337,17 @@
             color: var(--primary);
             font-size: 19px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            line-height: 1.4;
         }
 
         .step-card p {
             font-size: 15px;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
-        /* --- 3. Eenvoudige Pricing met Btw-Slider --- */
+        /* 9, 10, 11. Pricing met schakelaar */
         .pricing-section {
             background-color: var(--bg-light);
             border-top: 1px solid #e2e8f0;
@@ -362,7 +370,7 @@
             align-items: center;
             justify-content: center;
             gap: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .tax-label {
@@ -382,7 +390,7 @@
         .switch {
             position: relative;
             display: inline-block;
-            width: 54px;
+            width: 52px;
             height: 28px;
         }
 
@@ -421,7 +429,7 @@
         }
 
         input:checked + .slider:before {
-            transform: translateX(26px);
+            transform: translateX(24px);
         }
 
         .price-display {
@@ -439,14 +447,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .price-tax-note {
-            font-size: 14px;
-            color: var(--text-muted);
             margin-bottom: 30px;
-            min-height: 22px;
         }
 
         .pricing-perks {
@@ -471,7 +472,7 @@
             font-size: 16px;
         }
 
-        /* --- 4. Verplaatsingskosten --- */
+        /* Tabel verplaatsingskosten */
         .travel-box {
             margin-top: 45px;
             background: var(--white);
@@ -532,7 +533,7 @@
             font-weight: 800;
         }
 
-        /* --- 5. Contact Sectie --- */
+        /* 12 & 13. Contact */
         .contact-section {
             background-color: var(--primary);
             color: var(--white);
@@ -563,13 +564,13 @@
 
         .contact-card-btn {
             text-decoration: none;
-            padding: 18px 34px;
+            padding: 16px 32px;
             border-radius: 4px;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             transition: all 0.25s ease;
         }
 
@@ -593,7 +594,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- Footer --- */
+        /* 14. Footer */
         footer {
             background-color: #060b18;
             color: #94a3b8;
@@ -608,21 +609,22 @@
             color: var(--white);
         }
 
-        /* --- Responsive Mobiel --- */
+        /* Mobiel */
         @media (max-width: 768px) {
-            body { font-size: 16px; }
-            .hero { padding: 60px 0; }
+            body { font-size: 16px; padding-top: 70px; }
+            .hero { padding: 55px 0; }
             .hero h1 { font-size: 32px; }
+            .hero h1 .line-off { font-size: 26px; }
             .hero p { font-size: 17px; }
-            .section-title { font-size: 28px; }
+            .gold-title { font-size: 28px; }
+            
+            .roy-flex { flex-direction: column; align-items: center; text-align: left; padding: 25px 20px; gap: 25px; }
+            .roy-foto-kader { width: 180px; }
+            
             .steps-grid { grid-template-columns: 1fr; gap: 20px; }
-            .story-box { padding: 25px 20px; }
             .pricing-card { padding: 30px 20px; }
             .price-display { font-size: 52px; }
             
-            .header-flex { flex-direction: column; text-align: center; }
-            .header-actions { justify-content: center; }
-
             .travel-table tr { display: block; padding: 10px 0; }
             .travel-table td { display: block; width: 100%; text-align: left; padding: 3px 0; }
             .travel-table td.zone-price { text-align: left; margin-top: 4px; }
@@ -634,7 +636,7 @@
 </head>
 <body>
 
-    <!-- Header met het gekozen aan/uit-knop logo in SVG -->
+    <!-- 1. Vaste header met icon-only acties -->
     <header>
         <div class="container header-flex">
             <a href="#" class="logo-wrap">
@@ -649,81 +651,81 @@
                 </div>
             </a>
             <div class="header-actions">
-                <a href="https://wa.me/32487529489" class="btn-header btn-header-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="tel:+32487529489" class="btn-header btn-header-call"><i class="fas fa-phone-alt"></i> Bel Roy</a>
+                <a href="https://wa.me/32487529489" class="icon-btn icon-btn-wa" title="WhatsApp Roy" aria-label="WhatsApp Roy"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+32487529489" class="icon-btn icon-btn-call" title="Bel Roy" aria-label="Bel Roy"><i class="fas fa-phone-alt"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Sectie -->
+    <!-- 2, 3 & 4. Hero met kortere titels & 10 min gratis babbel -->
     <section class="hero">
         <div class="container">
-            <span class="hero-badge">Persoonlijke coaching aan huis</span>
-            <h1>Zet uw digitale vrijheid aan. <span>Geen stress meer met technologie.</span></h1>
-            <p>Heeft u soms het gevoel dat de digitalisering te snel gaat, of voelt u zich onzeker op smartphone, pc of internet? Ik kom persoonlijk bij u aan de keukentafel zitten om samen rust, overzicht en zelfstandigheid te creëren.</p>
+            <h1>
+                <span class="line-on">Digitale vrijheid aan.</span>
+                <span class="line-off">Digitale stress uit.</span>
+            </h1>
+            <p>Last van de snelheid van de digitale vooruitgang, of voelt u zich onzeker met uw smartphone, computer of op het internet? Ik zorg samen met u voor digitale rust, overzicht en zelfstandigheid.</p>
             <div class="hero-cta-group">
-                <a href="tel:+32487529489" class="cta-main cta-call"><i class="fas fa-phone-alt"></i> Bel voor gratis intake (10 min)</a>
-                <a href="https://wa.me/32487529489" class="cta-main cta-wa"><i class="fab fa-whatsapp"></i> Stel een vraag via WhatsApp</a>
+                <a href="tel:+32487529489" class="cta-main cta-call"><i class="fas fa-phone-alt"></i> Bellen (10 min gratis babbel)</a>
+                <a href="https://wa.me/32487529489" class="cta-main cta-wa"><i class="fab fa-whatsapp"></i> WhatsApp (10 min gratis babbel)</a>
             </div>
         </div>
     </section>
 
-    <!-- 1. Wie is Roy & Het Verhaal -->
-    <section id="over-roy">
+    <!-- 6 & 7. Wie is Roy (in goud) met foto en gecorrigeerde quote -->
+    <section id="wie-is-roy">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Achtergrond &amp; Passie</span>
-                <h2 class="section-title">Wie is Roy en waarom doe ik dit?</h2>
+                <h2 class="gold-title">Wie is Roy</h2>
             </div>
-            <div class="story-box">
-                <p>Gastvrijheid, geduld en een passie voor mensen zitten er bij mij met de paplepel ingegoten. Als extravert persoon haal ik mijn oprechte voldoening uit het écht ontzorgen van anderen.</p>
-                
-                <p>Mijn drijfveer voor Digital Liberty begon bij mijn eigen grootmoeder, <strong>Yvonne †</strong>. Zij was mijn absolute <em>chouchou</em>. Net zoals bij velen bracht de razendsnelle digitalisering voor haar steeds grotere drempels met zich mee: bank-apps die veranderden, itsme-updates, digitale overheidsbrieven en ingewikkelde instellingen. Hoe graag ik haar ook hielp, in de drukte van het dagelijkse leven en een volle agenda ontbrak het soms aan de nodige tijd en rust om er direct te zijn.</p>
-                
-                <p>Het overlijden van mijn grootmoeder bracht een diep besef met zich mee. Iedereen verdient betrouwbare, respectvolle en geduldige ondersteuning aan huis. Familieleden willen wel helpen, maar hebben simpelweg niet altijd de uren of de rust om op het juiste moment mee te kijken.</p>
-                
-                <p class="quote-highlight">"Wanneer ik bij u aan de keukentafel aanschuif, breng ik drie vaste waarden mee: een eindeloos engelengeduld, een vriendelijke joviale aanpak, en het doel om u zélf weer de volledige controle en vrijheid over uw apparaten te geven."</p>
+            <div class="roy-flex">
+                <div class="roy-foto-kader">
+                    <img src="IMG_20250503_164407.jpg" alt="Roy Beauquesne">
+                </div>
+                <div class="roy-tekst-inhoud">
+                    <p>Gastvrij en geduldig zijn 2 kernwaardes van mij. Als extravert persoon haal ik mijn voldoening uit het begrijpen en helpen van anderen.</p>
+                    <p>Mijn drijfveer voor Digital Liberty begon bij mijn eigen grootmoeder, <strong>Yvonne †</strong>. Zij was mijn absolute chouchou. Net zoals bij velen bracht de razendsnelle digitalisering voor haar steeds grotere drempels met zich mee: van mails opstellen &amp; printers installeren tot complexere zaken zoals wifi installeren of verbreden. Hoe graag ik haar ook hielp, in de drukte van het dagelijkse leven en een volle agenda ontbrak het soms aan de nodige tijd en rust om er direct te zijn.</p>
+                    <p>Het overlijden van mijn grootmoeder bracht een besef met zich mee. Iedereen verdient betrouwbare, respectvolle en geduldige ondersteuning aan huis. Familieleden willen wel helpen, maar hebben simpelweg niet altijd de uren of de rust om op het juiste moment mee te kijken.</p>
+                    <p class="roy-quote">"Wanneer ik bij u aan huis kom mag u rekenen op een geduldige en respectvolle aanpak met maar één doel: Om u zélf weer de volledige controle en vrijheid te geven over uw digitale kennis."</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. Wat Mag Je Verwachten -->
-    <section id="verwachten" style="background-color: var(--bg-light);">
+    <!-- 8. Werkwijze (in goud) -->
+    <section id="werkwijze" style="background-color: var(--bg-light);">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">De Werkwijze</span>
-                <h2 class="section-title">Wat mag u verwachten?</h2>
+                <h2 class="gold-title">Werkwijze</h2>
             </div>
             <div class="steps-grid">
                 <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Gratis telefonische intake</h3>
-                    <p>We starten altijd met een kort, vrijblijvend telefoontje van <strong>10 minuten</strong>. We maken kennis, luisteren naar uw vragen en toetsen rustig af waar de digitale schoen knelt.</p>
+                    <div class="step-badge">1</div>
+                    <h3>Gratis babbel + afspraak</h3>
+                    <p>We starten met een kort, vrijblijvend telefoontje van 10 minuten. We maken kennis, ik luister naar uw vragen en toets rustig af waar de digitale schoen knelt, waarna we een afspraak maken.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Coaching aan uw keukentafel</h3>
-                    <p>Geen overbodige theorie of vakjargon. We gaan samen aan de slag op uw eigen smartphone, tablet of computer, op uw tempo, totdat u zich 100% zeker en gerust voelt.</p>
+                    <div class="step-badge">2</div>
+                    <h3>Coaching</h3>
+                    <p>We gaan samen aan de slag met uw eigen toestellen: smartphone, tablet of computer. Volledig op uw tempo, totdat u zich 100% zeker en gerust voelt.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Doorlopende WhatsApp-hulp</h3>
-                    <p>Na afloop blijft u er nooit alleen voor staan. Voor korte vragen of twijfels nadien kunt u altijd eenvoudig een bericht sturen via WhatsApp voor snelle naservice.</p>
+                    <div class="step-badge">3</div>
+                    <h3>Nazorg</h3>
+                    <p>Na afloop staan we samen stil bij de vooruitgang. Daarnaast blijf ik voor korte vragen of twijfels nadien beschikbaar via een bericht op WhatsApp. Mits nodig maken we een nieuwe afspraak.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Eenvoudige Pricing met Btw-Slider -->
+    <!-- 9, 10, 11. Tarief met schakelaar -->
     <section id="tarief" class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Eén Eenvoudig Tarief</span>
-                <h2 class="section-title">Transparante prijzen zonder verrassingen</h2>
+                <h2 class="gold-title">Eenvoudig tarief</h2>
             </div>
 
             <div class="pricing-card">
-                <!-- Btw Switch Slider -->
                 <div class="tax-toggle-wrapper">
                     <span class="tax-label active" id="label-incl">Particulier (Btw incl.)</span>
                     <label class="switch">
@@ -733,16 +735,14 @@
                     <span class="tax-label" id="label-excl">Zakelijk (Excl. btw)</span>
                 </div>
 
-                <!-- Dynamische Prijsweergave -->
                 <div class="price-display" id="price-val">€ 60,00</div>
-                <div class="price-unit">Per uur coaching aan huis</div>
-                <div class="price-tax-note" id="price-note">Inclusief 21% btw (€ 10,41 btw inbegrepen)</div>
+                <div class="price-unit">Per uur coaching</div>
 
                 <ul class="pricing-perks">
-                    <li><i class="fas fa-check-circle"></i> <span>Volledige persoonlijke coaching op maat aan huis</span></li>
-                    <li><i class="fas fa-check-circle"></i> <span>Directe hulp bij smartphone, itsme, bank-apps, pc &amp; wifi</span></li>
-                    <li><i class="fas fa-check-circle"></i> <span>Inclusief gratis telefonische intake vooraf (10 min)</span></li>
-                    <li><i class="fas fa-check-circle"></i> <span>Doorlopende naservice voor korte vragen via WhatsApp</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Coaching op maat aan huis</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Hulp bij digitale toestellen, Wifi, browsen en meer</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Gratis telefonische babbel vooraf (10 min)</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span>Naservice adhv vragen via WhatsApp</span></li>
                 </ul>
 
                 <a href="tel:+32487529489" class="cta-main cta-call" style="width: 100%; justify-content: center;">
@@ -750,7 +750,7 @@
                 </a>
             </div>
 
-            <!-- 4. Vaste verplaatsingskosten per rit (btw inbegrepen) -->
+            <!-- Tabel verplaatsingskosten -->
             <div class="travel-box">
                 <h3>Vaste verplaatsingskosten per rit</h3>
                 <table class="travel-table">
@@ -763,17 +763,17 @@
                         <tr>
                             <td class="zone-name">Binnen de Singel</td>
                             <td class="zone-desc">Berchem, Borgerhout, Zurenborg, ...</td>
-                            <td class="zone-price">€ 10,00 <small style="font-weight: normal; color: var(--text-muted);">incl. btw</small></td>
+                            <td class="zone-price">€ 10,00</td>
                         </tr>
                         <tr>
                             <td class="zone-name">Buiten de Singel tot rand</td>
                             <td class="zone-desc">Mechelen, Lier, Mortsel, Wilrijk, ...</td>
-                            <td class="zone-price">€ 20,00 <small style="font-weight: normal; color: var(--text-muted);">incl. btw</small></td>
+                            <td class="zone-price">€ 20,00</td>
                         </tr>
                         <tr>
                             <td class="zone-name">Waasland</td>
                             <td class="zone-desc">Via de tunnel tot Sint-Niklaas, Beveren, ...</td>
-                            <td class="zone-price">€ 30,00 <small style="font-weight: normal; color: var(--text-muted);">incl. btw</small></td>
+                            <td class="zone-price">€ 30,00</td>
                         </tr>
                     </tbody>
                 </table>
@@ -782,50 +782,45 @@
         </div>
     </section>
 
-    <!-- 5. Afspraak maken / Contact -->
+    <!-- 12 & 13. Contact & Afspraak maken -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Klaar voor meer digitale rust?</h2>
-            <p>Neem gerust contact op voor een kennismaking of stel uw vraag direct. We plannen snel en gemakkelijk een moment in dat u het beste past.</p>
+            <h2>Klaar voor?</h2>
+            <p>Neem vandaag nog contact op voor een kennismaking. We plannen het beste moment in dat u past.</p>
             <div class="contact-buttons">
                 <a href="tel:+32487529489" class="contact-card-btn btn-call-big">
-                    <i class="fas fa-phone-alt"></i> Bel Roy: 0487 52 94 89
+                    <i class="fas fa-phone-alt"></i> Bellen
                 </a>
                 <a href="https://wa.me/32487529489" class="contact-card-btn btn-wa-big">
-                    <i class="fab fa-whatsapp"></i> WhatsApp: 0487 52 94 89
+                    <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 14. Footer -->
     <footer>
         <div class="container">
-            <p><strong>Digital Liberty by Roy B.</strong> &bull; Persoonlijke en geduldige digitale ondersteuning aan huis</p>
+            <p><strong>Digital Liberty by Roy B.</strong> &bull; Digitale ondersteuning aan huis</p>
             <p style="margin-top: 6px;">Antwerpen, België &bull; E-mail: roybcoaching@gmail.com &bull; Tel: +32 487 52 94 89</p>
             <p style="margin-top: 15px; font-size: 13px; opacity: 0.7;">&copy; 2026 Digital Liberty by Roy B. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 
-    <!-- Slider Javascript Logica (Optie A: 60 incl. btw basis -> 49,59 excl. btw) -->
+    <!-- Slider Javascript Logica -->
     <script>
         function toggleTax() {
             const toggle = document.getElementById('tax-toggle');
             const priceVal = document.getElementById('price-val');
-            const priceNote = document.getElementById('price-note');
             const labelIncl = document.getElementById('label-incl');
             const labelExcl = document.getElementById('label-excl');
 
             if (toggle.checked) {
-                // Stand: Exclusief Btw (€ 49,59 + € 10,41 = € 60,00)
                 priceVal.textContent = "€ 49,59";
-                priceNote.textContent = "Exclusief 21% btw (+ € 10,41 btw = € 60,00 totaal)";
                 labelIncl.classList.remove('active');
                 labelExcl.classList.add('active');
             } else {
-                // Stand: Inclusief Btw (Standaard basis)
                 priceVal.textContent = "€ 60,00";
-                priceNote.textContent = "Inclusief 21% btw (€ 10,41 btw inbegrepen)";
                 labelIncl.classList.add('active');
                 labelExcl.classList.remove('active');
             }
